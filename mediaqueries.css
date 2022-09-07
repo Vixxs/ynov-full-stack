@@ -1,0 +1,39 @@
+@media screen and (max-width: 650px) {
+  body {
+    background-color: chocolate;
+  }
+  nav {
+    flex-direction: column;
+  }
+  nav ul {
+    flex-direction: column;
+    padding-left: 0;
+  }
+  nav ul li {
+    margin: 5px;
+  }
+  nav form {
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex-direction: column;
+  }
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+  }
+  body {
+    background-color: cornflowerblue;
+  }
+  main,
+  header {
+    background-color: cornflowerblue;
+  }
+  form,
+  aside {
+    display: none !important;
+  }
+}
