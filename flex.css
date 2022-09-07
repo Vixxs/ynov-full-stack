@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: auto;
+  background-color: brown;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  background-color: bisque;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+nav ul li {
+  flex-grow: 1;
+}
+
+nav ul li:nth-child(1) {
+  flex-grow: 2;
+}
+
+nav ul li a {
+  color: black;
+}
+
+main {
+  display: flex;
+}
+
+#body-container {
+  padding: 10px;
+  flex-basis: 70%;
+}
+
+main form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 5px;
+  height: 32px;
+  border-radius: 10px;
+  border: none;
+  padding-left: 15px;
+}
+
+input[type="submit"] {
+  padding: 5px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: bisque;
+  color: black;
+  padding: 5px;
+  /* fixer en bas avec flex direction column */
+  margin-top: auto;
+}
