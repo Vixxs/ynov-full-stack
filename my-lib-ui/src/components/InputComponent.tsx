@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const InputComponent: React.FC<
   React.DetailedHTMLProps<
@@ -6,7 +6,7 @@ const InputComponent: React.FC<
     HTMLInputElement
   >
 > = (props) => {
-  return <input {...props} className='my-lib-ui-input' />
-}
+  return <input {...props} className="my-lib-ui-input" />;
+};
 
-export default InputComponent
+export default InputComponent;

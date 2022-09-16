@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 
 interface Props {
-  text: string
+  text: string;
 }
 
 const ExampleComponent: React.FC<Props> = ({ text }: Props) => {
   useEffect(() => {
-    console.log('changes')
-  })
-  return <div className='test'>Example Component: {text}</div>
-}
+    console.log("changes");
+  });
+  return <div className="test">Example Component: {text}</div>;
+};
 
-export default ExampleComponent
+export default ExampleComponent;
