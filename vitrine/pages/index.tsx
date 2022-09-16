@@ -1,3 +1,4 @@
+import { ExampleComponent } from "my-lib-ui";
 import type { NextPage } from "next";
 import AsideComponent from "../components/AsideComponent";
 import BodyContainerComponent from "../components/BodyContainerComponent";
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
       </main>
       <FooterComponent />
       <ModalCookieComponent />
+      <ExampleComponent text="Hello world" />
     </div>
   );
 };

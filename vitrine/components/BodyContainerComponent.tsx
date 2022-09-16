@@ -1,3 +1,5 @@
+import { InputComponent } from "my-lib-ui";
+
 const BodyContainerComponent: React.FC = () => {
   return (
     <div id="body-container">
@@ -46,7 +48,7 @@ const BodyContainerComponent: React.FC = () => {
         </p>
         <form method="post">
           <label htmlFor="email">E-mail</label>
-          <input
+          <InputComponent
             id="email"
             type="email"
             name="email"
@@ -54,15 +56,15 @@ const BodyContainerComponent: React.FC = () => {
             required
           />
           <label htmlFor="password">Mot de passe</label>
-          <input
+          <InputComponent
             type="password"
             id="password"
             name="password"
             pattern="[0-9a-zA-Z]{6,}$"
             required
           />
-          <input type="submit" value="Valider" />
-          <input type="reset" value="Annler" />
+          <InputComponent type="submit" value="Valider" />
+          <InputComponent type="reset" value="Annler" />
         </form>
       </article>
     </div>

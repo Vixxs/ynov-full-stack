@@ -57,7 +57,7 @@ main form {
   flex-direction: column;
 }
 
-input {
+input.my-lib-ui-input {
   margin: 5px;
   height: 32px;
   border-radius: 10px;
@@ -65,7 +65,7 @@ input {
   padding-left: 15px;
 }
 
-input[type="submit"] {
+input.my-lib-ui-input[type='submit'] {
   padding: 5px;
 }
 
