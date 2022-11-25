@@ -9,12 +9,7 @@ type Props = React.DetailedHTMLProps<
   onClick: CallableFunction,
 };
 
-const onFocus = () => {
-  document.querySelector('')
-};
-
 const ButtonComponent: React.FC<Props> = (props) => {
-  onFocus();
   const { label, customClass, onClick } = props;
   return (
     <div className="{customClass} my-lib-ui-button-field">
