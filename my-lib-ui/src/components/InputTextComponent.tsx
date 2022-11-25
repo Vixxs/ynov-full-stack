@@ -3,17 +3,23 @@ import React from "react";
 type Props = React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
-> & { 
-  label: string,
-  type: string
- };
+  > & { 
+    label: string,
+  };
+
+const onFocus = (e: any) => {
+  e.target.parentElement.classList.add('my-lib-ui-input-text-focus');
+};
+
+const onBlur = (e: any) => {
+  e.target.parentElement.classList.remove('my-lib-ui-input-text-focus');
+}
 
 const InputComponent: React.FC<Props> = (props) => {
-  const { label } = props;
   return (
-    <div className="my-lib-ui-form-field">
-      <label className="my-lib-ui-label">{label}</label>
-      <input {...props} type='{ type }' className="my-lib-ui-input" />
+    <div className="my-lib-ui-form-field my-lib-input-text">
+      <input onBlur={onBlur} onFocus={onFocus} id={props.id} type="text" {...props} className="my-lib-ui-input" />
+      <label htmlFor={props.id} className="my-lib-ui-label">{props.label}</label>
     </div>
   );
 };

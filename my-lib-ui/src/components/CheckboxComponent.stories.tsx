@@ -11,6 +11,11 @@ export default {
   component: CheckboxComponent,
 } as ComponentMeta<typeof CheckboxComponent>;
 
-export const CheckboxComponentView: ComponentStory<typeof CheckboxComponent> = (
-  args
-) => <CheckboxComponent {...args} />;
+export const CheckboxComponentView: ComponentStory<
+typeof CheckboxComponent
+> = ( args) => <CheckboxComponent {...args} />;
+
+CheckboxComponentView.args = {
+  label: 'Label',
+  id: "checkbox",
+};

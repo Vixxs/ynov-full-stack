@@ -16,5 +16,6 @@ export const InputTextComponentView: ComponentStory<
 > = (args) => <InputTextComponent {...args} />;
 
 InputTextComponentView.args = {
+  label: 'Label',
   placeholder: "Example Input",
 };
