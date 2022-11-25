@@ -1,0 +1,17 @@
+.my-lib-ui {
+    &-button {
+        &-field {
+            display: flex;
+            background: #C00000;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Roboto';
+            font-size: 16px;
+            color: white;
+            &:hover {
+                cursor: pointer;
+                background-color: lightgray;
+            }
+        }
+    }
+}

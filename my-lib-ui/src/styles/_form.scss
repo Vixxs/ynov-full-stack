@@ -1,8 +1,30 @@
-.my-lib-ui-form-field {
-  .my-lib-ui-label {
+.my-lib-ui {
+  &-form-field {
+    width: 326px;
+    height: 60px;
+    background: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   }
-  .my-lib-ui-input {
+  &-label {
+    font-family: 'Roboto';
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
+    &:focus {
+      color : black;
+    }
   }
-  .my-lib-ui-select {
+
+  &-input {
+    &:focus {
+      border-bottom: 2px solid black;
+      color: #2D2D2D;;
+      font-family: 'Abel';
+      font-size: 16px;
+    }
+    
   }
+  
 }
