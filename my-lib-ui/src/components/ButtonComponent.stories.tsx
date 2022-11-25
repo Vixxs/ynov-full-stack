@@ -11,6 +11,10 @@ export default {
   component: ButtonComponent,
 } as ComponentMeta<typeof ButtonComponent>;
 
-export const CheckboxComponentView: ComponentStory<typeof ButtonComponent> = (
+export const ButtonComponentView: ComponentStory<typeof ButtonComponent> = (
   args
 ) => <ButtonComponent {...args}>Button</ButtonComponent>;
+
+ButtonComponentView.args = {
+  label: 'Connexion admin',
+};

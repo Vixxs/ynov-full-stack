@@ -12,9 +12,9 @@ type Props = React.DetailedHTMLProps<
 const ButtonComponent: React.FC<Props> = (props) => {
   const { label, customClass, onClick } = props;
   return (
-    <div className="{customClass} my-lib-ui-button-field">
+    <div className={customClass + " my-lib-ui-button-field"}>
       <button 
-        onClick={() => {{onClick}}} 
+        onClick={() => {onClick}} 
         className="my-lib-ui-button" 
         {...props}
       >
