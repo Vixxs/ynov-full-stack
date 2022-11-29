@@ -11,7 +11,7 @@ export default {
   component: SelectComponent,
 } as ComponentMeta<typeof SelectComponent>;
 
-export const RadioButtonComponentView: ComponentStory<
+export const SelectComponentView: ComponentStory<
   typeof SelectComponent
 > = (args) => (
   <SelectComponent {...args}>
@@ -20,3 +20,7 @@ export const RadioButtonComponentView: ComponentStory<
     <option>Option 3</option>
   </SelectComponent>
 );
+
+SelectComponentView.args = {
+  label: 'Label',
+};

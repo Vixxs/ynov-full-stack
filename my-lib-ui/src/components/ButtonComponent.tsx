@@ -6,7 +6,7 @@ type Props = React.DetailedHTMLProps<
 > & { 
   label: string ,
   customClass: string,
-  onClick: CallableFunction,
+  onClick: () => void,
 };
 
 const ButtonComponent: React.FC<Props> = (props) => {

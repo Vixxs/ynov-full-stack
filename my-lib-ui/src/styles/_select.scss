@@ -1,0 +1,23 @@
+.my-lib-ui{
+    &-select{
+        &-label{
+            font-family: 'Roboto';
+            color: #2D2D2D;
+            font-size: 13px;
+            margin-left: 4px;
+        }
+        font-size: 16px;
+        font-family: 'Abel';
+        color: rgba(0, 0, 0, 0.5);
+        border: 0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: flex-start;
+        outline: none;
+        background-color: transparent;
+    }
+}
+.selected{
+    border-bottom: solid 2px black ;
+}

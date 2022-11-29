@@ -11,6 +11,12 @@ export default {
   component: RadioButtonComponent,
 } as ComponentMeta<typeof RadioButtonComponent>;
 
-export const RadioButtonComponentView: ComponentStory<
+export const RadioComponentView: ComponentStory<
   typeof RadioButtonComponent
 > = (args) => <RadioButtonComponent {...args} />;
+
+
+RadioComponentView.args = {
+  label: 'Label',
+  id: "radio",
+};

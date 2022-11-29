@@ -1,4 +1,41 @@
 .my-lib-ui {
     &-radio {
+        &-input{
+            &:checked + label::after{
+                background-color: black;
+            }
+            opacity: 0;
+        }
+        &-label{
+            margin-left: 10px;
+            position: relative;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+            font-family: 'Abel', sans-serif;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 13px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 100%;
+                height: 13px;
+                border: solid black 2px;
+                left: -30px ;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                width: 11px;
+                height: 11px;
+                left: -27px ;
+                border-radius: 1px;
+                border-radius: 100%;
+                background-color: white;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
     }
 }
