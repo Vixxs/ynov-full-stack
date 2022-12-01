@@ -13,8 +13,8 @@ const onSelected = (e: any) => {
 
 const SelectComponent: React.FC<Props> = (props) => {
   return (
-    <div className={`my-lib-ui-form-field ${props.className}`}>
-      <label className="my-lib-ui-select-label">{props.label}</label>
+    <div className="my-lib-ui-form-field">
+      <label className={`my-lib-ui-select-label ${props.className}`}>{props.label}</label>
       <select className="my-lib-ui-select" onChange={onSelected} {...props}>
         {props.children}
       </select>

@@ -9,9 +9,9 @@ type Props = React.DetailedHTMLProps<
 
 const ButtonComponent: React.FC<Props> = (props) => {
   return (
-    <div className={`my-lib-ui-button-field ${props.className}`} >
+    <div className="my-lib-ui-button-field">
       <button 
-        className="my-lib-ui-button" 
+        className={`my-lib-ui-button" ${props.className}`}
         {...props}
       >
         { props.label }
