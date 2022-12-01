@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bayon&family=Roboto:wght@500&display=swap');
 
 html,
 body {
@@ -17,6 +17,9 @@ a {
   box-sizing: border-box;
 }
 main{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   padding-top: 72px;
 }
 
@@ -35,6 +38,7 @@ header{
   width: 100%;
 }
 .home-banner{
+  width: 100%;
   position: relative;
 }
 .info-box{
@@ -48,6 +52,7 @@ header{
   font-family: 'Abel';
   font-style: normal;
   font-weight: 400;
+  
   font-size: 18px;
   line-height: 25px;
   width: 45%;
@@ -77,6 +82,7 @@ header div span{
   align-items: center;
   justify-content: center;
 }
+<<<<<<< HEAD
 
 .login-page {
   padding-bottom: 124px;
@@ -99,4 +105,25 @@ header div span{
 
 main {
   background: #F5F5F5;
+=======
+.radio-box {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-direction: row;
+}
+.home-form{
+  width: 45%;
+  background-color: white;
+  padding: 16px 43px;
+}
+.home-form h1{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: #C00000;
+>>>>>>> 7ba88eea7f233d6d01292bebab4c64d71ee9f45a
 }
