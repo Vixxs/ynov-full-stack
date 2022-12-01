@@ -77,3 +77,26 @@ header div span{
   align-items: center;
   justify-content: center;
 }
+
+.login-page {
+  padding-bottom: 124px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box{
+  background-color: #FFFFFF;
+}
+
+.login-form {
+  flex-direction: column;
+}
+
+.login-button {
+  width: fit-content;
+}
+
+main {
+  background: #F5F5F5;
+}
