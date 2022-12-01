@@ -11,7 +11,7 @@ const ButtonComponent: React.FC<Props> = (props) => {
   return (
     <div className="my-lib-ui-button-field">
       <button 
-        className={`my-lib-ui-button" ${props.className}`}
+        className="my-lib-ui-button"
         {...props}
       >
         { props.label }
