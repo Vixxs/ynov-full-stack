@@ -14,8 +14,11 @@ const Login: NextPage = () => {
       <div className="login-page">
         <div className="login-box">
             <main>
+              <a className="button-goback" href="javascript:history.back()">
+                retour
+              </a>
               <form className="login-form" action="">
-                <p>CONNEXION</p>
+                <p className="label-login">CONNEXION</p>
                 <div>
                   <InputComponent label="identifiant" type="text"/>
                   <InputComponent label="mot de passe" type="password"/>

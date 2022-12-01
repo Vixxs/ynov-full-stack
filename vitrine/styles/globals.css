@@ -86,25 +86,42 @@ header div span{
 .login-page {
   padding-bottom: 124px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  background-color: #F5F5F5;
 }
 
 .login-box{
   background-color: #FFFFFF;
+  margin-top: 124px;
+}
+
+.my-lib-ui-form-field {
+  margin-bottom: 24px;
 }
 
 .login-form {
+  width: 358px;
+  padding: 16px;
+  background: #FFFFFF;
   flex-direction: column;
 }
 
+.label-login {
+  font-family: 'Roboto';
+  font-size: 21px;
+  text-transform: uppercase;
+  color: #C00000;
+}
+
 .login-button {
-  width: fit-content;
+  margin-top: 24px;
+  width: 326px;
 }
 
 main {
   background: white;
 }
+
 
 .radio-box {
   display: flex;
