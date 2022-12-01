@@ -1,4 +1,4 @@
-import { InputTextComponent, RadioButtonComponent, SelectComponent } from "my-lib-ui";
+import { ButtonComponent, CheckboxComponent, InputComponent, RadioButtonComponent, SelectComponent } from "my-lib-ui";
 import type { NextPage } from "next";
 import FooterComponent from "../components/FooterComponent";
 import HeadComponent from "../components/HeadComponent";
@@ -23,8 +23,17 @@ const Home: NextPage = () => {
             <RadioButtonComponent label="une entreprise" id="radio-entreprise"/>
             <RadioButtonComponent label="une particulier" id="radio-particulier"/>
           </div>
-          <InputTextComponent label="Email" placeholder="Votre email" />
-          
+          <div className="input-box">
+            <InputComponent label="Nom" type={"text"} placeholder="Votre nom" />
+            <InputComponent label="Prénom" type={"text"} placeholder="Votre prénom" />
+            <InputComponent label="Email" type={"text"} placeholder="Votre email" />
+            <InputComponent label="Numéro de téléphone" type={"tel"} placeholder="Votre email" />
+            <SelectComponent label="Nationnalité">
+              <option value="">Selectionner une valeur</option>
+            </SelectComponent>
+          </div>
+          <CheckboxComponent className="ok" id="permis-checkbox" label="J'atteste que je possède le permis de conduire valide." />
+          <ButtonComponent customClass="" label="Demander mon inscription"/>
         </form>
 
       </main>

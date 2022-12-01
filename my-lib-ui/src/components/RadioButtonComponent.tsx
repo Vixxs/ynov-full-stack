@@ -7,7 +7,7 @@ type Props = React.DetailedHTMLProps<
 
 const RadioButtonComponent: React.FC<Props> = (props) => {
   return (
-    <div className="my-lib-ui-radio">
+    <div className={"my-lib-ui-radio" + props.}>
       <input className="my-lib-ui-radio-input" type="radio" id={props.id} {...props} />
       <label className="my-lib-ui-radio-label" htmlFor={props.id}>{props.label}</label>
     </div>

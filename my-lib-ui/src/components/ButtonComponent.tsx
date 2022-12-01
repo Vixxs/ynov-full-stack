@@ -4,19 +4,17 @@ type Props = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 > & { 
-  label: string ,
-  customClass: string
+  label: string 
 };
 
 const ButtonComponent: React.FC<Props> = (props) => {
-  const { label, customClass } = props;
   return (
-    <div className={customClass + " my-lib-ui-button-field"}>
+    <div className={"my-lib-ui-button-field " + props.className}>
       <button 
         className="my-lib-ui-button" 
         {...props}
       >
-        { label }
+        { props.label }
       </button>
     </div>
   );

@@ -17,9 +17,9 @@ const onBlur = (e: any) => {
 
 const InputComponent: React.FC<Props> = (props) => {
   return (
-    <div className="my-lib-ui-form-field my-lib-input-text">
-      <input onBlur={onBlur} onFocus={onFocus} id={props.id} type="text" {...props} className="my-lib-ui-input" />
-      <label htmlFor={props.id} className="my-lib-ui-label">{props.label}</label>
+    <div className={"my-lib-ui-form-field my-lib-input-text" + props.className}>
+      <input onBlur={onBlur} onFocus={onFocus} id={props.id} {...props} className="my-lib-ui-input" />
+      <label htmlFor={props.id} className={"my-lib-ui-label"}>{props.label}</label>
     </div>
   );
 };

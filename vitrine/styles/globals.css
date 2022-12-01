@@ -103,7 +103,7 @@ header div span{
 }
 
 main {
-  background: #F5F5F5;
+  background: white;
 }
 
 .radio-box {
@@ -125,4 +125,10 @@ main {
   line-height: 25px;
   text-transform: uppercase;
   color: #C00000;
+}
+.input-box{
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 21px;
 }

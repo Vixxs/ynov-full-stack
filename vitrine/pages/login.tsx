@@ -1,4 +1,4 @@
-import { InputTextComponent, ButtonComponent } from "my-lib-ui";
+import { InputComponent, ButtonComponent } from "my-lib-ui";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import FooterComponent from "../components/FooterComponent";
@@ -17,8 +17,8 @@ const Login: NextPage = () => {
               <form className="login-form" action="">
                 <p>CONNEXION</p>
                 <div>
-                  <InputTextComponent label="identifiant" type="text"/>
-                  <InputTextComponent label="mot de passe" type="password"/>
+                  <InputComponent label="identifiant" type="text"/>
+                  <InputComponent label="mot de passe" type="password"/>
                   <ButtonComponent label="Connexion" customClass="login-button"/>
                 </div>            
               </form>
