@@ -17,8 +17,9 @@ const Home: NextPage = () => {
           </p>
         </div>
         <form className="home-form" action="">
+          <h1>Inscription</h1>
           <p>Je suis :</p>
-          <div>
+          <div className="radio-box">
             <RadioButtonComponent label="une entreprise" id="radio-entreprise"/>
             <RadioButtonComponent label="une particulier" id="radio-particulier"/>
           </div>
