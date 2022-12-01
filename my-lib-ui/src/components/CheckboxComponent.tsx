@@ -9,8 +9,8 @@ type Props = React.DetailedHTMLProps<
 
 const CheckboxComponent: React.FC<Props> = (props) => {
   return (
-    <div className="my-lib-ui-checkbox">
-      <input className={"my-lib-ui-checkbox-input " + props.className} type="checkbox" id={props.id} {...props}  />
+    <div className={`my-lib-ui-checkbox ${props.className}`}>
+      <input className="my-lib-ui-checkbox-input" type="checkbox" id={props.id} {...props}  />
       <label className="my-lib-ui-checkbox-label" htmlFor={props.id}>{props.label}</label>
     </div>
   );

@@ -33,7 +33,7 @@ const Home: NextPage = () => {
             </SelectComponent>
           </div>
           <CheckboxComponent className="ok" id="permis-checkbox" label="J'atteste que je possède le permis de conduire valide." />
-          <ButtonComponent customClass="" label="Demander mon inscription"/>
+          <ButtonComponent label="Demander mon inscription"/>
         </form>
 
       </main>
