@@ -97,6 +97,10 @@ header div span{
   color: #C00000;
 }
 
+.my-lib-input-text {
+  margin-bottom: 24px;
+}
+
 .login-box{
   margin-top: 124px;
   align-items: left;
@@ -117,28 +121,29 @@ header div span{
   color: #C00000;
 }
 
-.login-button {
+.login-button button {
   margin-top: 24px;
   width: 326px;
   background: #C00000;
-  border: 0;
-  font-style: normal;
-  display: flex;
-  align-items: center;
   justify-content: center;
   font-family: 'Roboto';
   font-size: 16px;
   color: white;
-  font-weight: 700;
-  line-height: 20px;
   display: flex;
   align-items: center;
   padding: 12px;
   cursor: pointer;
-
-  margin-bottom: 80px;
+  margin-top: 36px;
+  height: 44px;
 }
 
+main {
+  background: white;
+  margin-bottom: 80px;
+}
+#login main {
+  background-color: #F5F5F5;
+}
 .radio-box {
   display: flex;
   gap: 60px;

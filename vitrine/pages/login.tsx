@@ -8,7 +8,7 @@ import HeaderComponent from "../components/HeaderComponent";
 const Login: NextPage = () => {
   const router = useRouter();
   return (
-    <div>
+    <div id="login">
       <HeadComponent />
       <HeaderComponent />
       <div className="login-page">
@@ -22,9 +22,6 @@ const Login: NextPage = () => {
                 <div>
                   <InputComponent label="identifiant" type="text"/>
                   <InputComponent label="mot de passe" type="password"/>
-                  <span className="show-hide" onClick={togglePassword()}>
-                    <img src="/visible.png"></img>
-                  </span>
                   <ButtonComponent label="Connexion" className="login-button"/>
                 </div>            
               </form>
