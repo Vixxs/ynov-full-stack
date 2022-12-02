@@ -7,9 +7,10 @@ type Props = React.DetailedHTMLProps<
   label: string 
 };
 
-const ButtonComponent: React.FC<Props> = (props) => {
+const ButtonComponent: React.FC<Props> = ({className, ...props}) => {
+  
   return (
-    <div className="my-lib-ui-button-field">
+    <div className={["my-lib-ui-button-field", className].join(" ")}>
       <button 
         className="my-lib-ui-button"
         {...props}

@@ -15,9 +15,9 @@ const onBlur = (e: any) => {
   e.target.parentElement.classList.remove('my-lib-ui-input-text-focus');
 }
 
-const InputComponent: React.FC<Props> = (props) => {
+const InputComponent: React.FC<Props> = ({className ,...props}) => {
   return (
-    <div className="my-lib-ui-form-field my-lib-input-text">
+    <div className={["my-lib-ui-form-field my-lib-input-text", className].join(" ")}>
       <input onBlur={onBlur} onFocus={onFocus} id={props.id} {...props} className="my-lib-ui-input" />
       <label htmlFor={props.id} className={"my-lib-ui-label"}>{props.label}</label>
     </div>
