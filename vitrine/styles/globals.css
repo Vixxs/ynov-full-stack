@@ -90,9 +90,20 @@ header div span{
   background-color: #F5F5F5;
 }
 
+.button-goback {
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 16px;
+  color: #C00000;
+}
+
+.my-lib-input-text {
+  margin-bottom: 24px;
+}
+
 .login-box{
-  background-color: #FFFFFF;
   margin-top: 124px;
+  align-items: left;
 }
 
 .login-form {
@@ -100,6 +111,7 @@ header div span{
   padding: 16px;
   background: #FFFFFF;
   flex-direction: column;
+  margin-top: 16px;
 }
 
 .label-login {
@@ -109,17 +121,29 @@ header div span{
   color: #C00000;
 }
 
-.login-button {
+.login-button button {
   margin-top: 24px;
   width: 326px;
+  background: #C00000;
+  justify-content: center;
+  font-family: 'Roboto';
+  font-size: 16px;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+  margin-top: 36px;
+  height: 44px;
 }
 
 main {
   background: white;
   margin-bottom: 80px;
 }
-
-
+#login main {
+  background-color: #F5F5F5;
+}
 .radio-box {
   display: flex;
   gap: 60px;

@@ -8,25 +8,25 @@ import HeaderComponent from "../components/HeaderComponent";
 const Login: NextPage = () => {
   const router = useRouter();
   return (
-    <div>
+    <div id="login">
       <HeadComponent />
       <HeaderComponent />
       <div className="login-page">
-        <div className="login-box">
-            <main>
+          <main>
+            <div className="login-box">
               <a className="button-goback" href="javascript:history.back()">
-                retour
+                ← retour
               </a>
               <form className="login-form" action="">
                 <p className="label-login">CONNEXION</p>
                 <div>
                   <InputComponent label="identifiant" type="text"/>
                   <InputComponent label="mot de passe" type="password"/>
-                  <ButtonComponent label="Connexion" customClass="login-button"/>
+                  <ButtonComponent label="Connexion" className="login-button"/>
                 </div>            
               </form>
-            </main>
-        </div>
+            </div>
+          </main>
       </div>
       <FooterComponent />
     </div>
