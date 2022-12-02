@@ -12,21 +12,24 @@ const Login: NextPage = () => {
       <HeadComponent />
       <HeaderComponent />
       <div className="login-page">
-        <div className="login-box">
-            <main>
+          <main>
+            <div className="login-box">
               <a className="button-goback" href="javascript:history.back()">
-                retour
+                ← retour
               </a>
               <form className="login-form" action="">
                 <p className="label-login">CONNEXION</p>
                 <div>
                   <InputComponent label="identifiant" type="text"/>
                   <InputComponent label="mot de passe" type="password"/>
-                  <ButtonComponent label="Connexion" customClass="login-button"/>
+                  <span className="show-hide" onClick={togglePassword()}>
+                    <img src="/visible.png"></img>
+                  </span>
+                  <ButtonComponent label="Connexion" className="login-button"/>
                 </div>            
               </form>
-            </main>
-        </div>
+            </div>
+          </main>
       </div>
       <FooterComponent />
     </div>
