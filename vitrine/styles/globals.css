@@ -95,10 +95,6 @@ header div span{
   margin-top: 124px;
 }
 
-.my-lib-ui-form-field {
-  margin-bottom: 24px;
-}
-
 .login-form {
   width: 358px;
   padding: 16px;
@@ -125,7 +121,7 @@ main {
 
 .radio-box {
   display: flex;
-  gap: 5px;
+  gap: 60px;
   align-items: center;
   flex-direction: row;
 }
@@ -133,6 +129,8 @@ main {
   width: 45%;
   background-color: white;
   padding: 16px 43px;
+  display: flex;
+  flex-direction: column;
 }
 .home-form h1{
   font-family: 'Roboto';
@@ -148,4 +146,15 @@ main {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: 21px;
+}
+
+.home-form-submit{
+  margin-left: auto;
+}
+.home-form-submit button{
+  padding: 12px 75px;
+}
+
+.permis-checkbox{
+  margin: 35px 0;
 }
