@@ -94,6 +94,14 @@ header div span{
   font-family: 'Roboto';
   font-weight: 700;
   font-size: 16px;
+  color: black;
+}
+.button-goback::before{
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 16px;
+  margin-right: 5px;
+  content: '←';
   color: #C00000;
 }
 
@@ -105,7 +113,11 @@ header div span{
   margin-top: 124px;
   align-items: left;
 }
-
+.login-input-box{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
 .login-form {
   width: 358px;
   padding: 16px;

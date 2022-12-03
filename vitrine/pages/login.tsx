@@ -15,15 +15,15 @@ const Login: NextPage = () => {
           <main>
             <div className="login-box">
               <a className="button-goback" href="javascript:history.back()">
-                ← retour
+                retour
               </a>
               <form className="login-form" action="">
-                <p className="label-login">CONNEXION</p>
-                <div>
-                  <InputComponent label="identifiant" type="text"/>
-                  <InputComponent label="mot de passe" type="password"/>
-                  <ButtonComponent label="Connexion" className="login-button"/>
-                </div>            
+                <p className="label-login">Connexion</p>
+                <div className="login-input-box">
+                  <InputComponent label="Identifiant" type="text"/>
+                  <InputComponent label="Mot de passe" type="password"/>
+                </div>      
+                <ButtonComponent label="Connexion" className="login-button"/>
               </form>
             </div>
           </main>
