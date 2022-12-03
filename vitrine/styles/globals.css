@@ -261,6 +261,7 @@ footer ul li a{
 
 @media (max-width: 1200px) {
   .input-box{
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
   }

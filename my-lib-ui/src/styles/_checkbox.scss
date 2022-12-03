@@ -4,10 +4,11 @@
             &:checked + label::after{
                 background-color: black;
             }
-            opacity: 0;
+            display: none;
         }
         &-label{
-            margin-left: 10px;
+            display: inline-block;
+            margin-left: 30px;
             position: relative;
             font-weight: 400;
             font-size: 16px;
