@@ -8,10 +8,6 @@
     padding: 0px 15px;
     align-items: flex-start;
     justify-content: center;
-    img{
-      position: absolute;
-      right: 13px;
-    }
   }
   &-label {
     order: 0;
@@ -48,4 +44,8 @@
     
   }
   
+}
+.show-password-icon{
+  position: absolute;
+  right: 13px;
 }
