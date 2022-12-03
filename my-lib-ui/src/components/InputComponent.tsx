@@ -27,10 +27,14 @@ const showPassword = (e:any) => {
     input.type = "password";
   }
 }
+const focusInput = (e:any) => {
+  let input = e.target.querySelector('input')
+  input.focus();
+}
 
 const InputComponent: React.FC<Props> = ({className ,...props}) => {
   return (
-    <div className={["my-lib-ui-form-field", className].join(" ")}>
+    <div onClick={focusInput} className={["my-lib-ui-form-field", className].join(" ")}>
       <input onBlur={onBlur} onFocus={onFocus} id={props.id} {...props} className="my-lib-ui-input" />
       <label htmlFor={props.id} className={"my-lib-ui-label"}>{props.label}</label>
       {props.type == "password" &&
