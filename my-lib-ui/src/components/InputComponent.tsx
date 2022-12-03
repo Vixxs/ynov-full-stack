@@ -28,8 +28,10 @@ const showPassword = (e:any) => {
   }
 }
 const focusInput = (e:any) => {
-  let input = e.target.querySelector('input')
-  input.focus();
+  let input = e.currentTarget.querySelector('input')
+  if(document.activeElement !== input){
+    input.focus();
+  }
 }
 
 const InputComponent: React.FC<Props> = ({className ,...props}) => {
