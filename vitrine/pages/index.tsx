@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         </div>
         <form className="home-form" action="">
           <h1>Inscription</h1>
-          <p>Je suis :</p>
+          <p className="home-form-p">Je suis :</p>
           <div className="radio-box">
             <RadioButtonComponent name="status" label="une entreprise" id="radio-entreprise"/>
             <RadioButtonComponent name="status" label="une particulier" id="radio-particulier"/>
@@ -33,7 +33,11 @@ const Home: NextPage = () => {
             </SelectComponent>
           </div>
           <CheckboxComponent className="permis-checkbox" id="permis-checkbox" label="J'atteste que je possède le permis de conduire valide." />
-          <ButtonComponent className="home-form-submit" type="submit" label="Demander mon inscription"/>
+          <ButtonComponent onClick={(event: any) => {
+              event.preventDefault();
+              window.location.assign('/registration-confirm');
+            }} 
+            className="home-form-submit" type="submit" label="Demander mon inscription"/>
         </form>
       </main>
       <FooterComponent />

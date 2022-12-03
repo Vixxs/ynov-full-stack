@@ -78,6 +78,7 @@ header div span{
   margin-left: 17px;
 }
 .logo-box{
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,7 +151,18 @@ header div span{
   margin-top: 36px;
   height: 44px;
 }
-
+.inscription-confirmation-box{
+  margin-top: 8px;
+  background: #F9F9F9;
+  padding: 16px;
+}
+.app-box{
+  padding: 42px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 55px;
+}
 main {
   background: white;
   margin-bottom: 80px;
@@ -175,11 +187,20 @@ main {
 .home-form h1{
   font-family: 'Roboto';
   font-style: normal;
+  margin-bottom: 0;
   font-weight: 500;
   font-size: 21px;
   line-height: 25px;
   text-transform: uppercase;
   color: #C00000;
+}
+.home-form-p{
+  margin: 8px 0;
+  font-family: 'Abel';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
 }
 .input-box{
   margin-top: 30px;

@@ -18,12 +18,12 @@ const Home: NextPage = () => {
         </div>
         <section className="home-form">
           <h1>Inscription</h1>
-          <div>
-            <p>Votre demande d’inscription a bien été prise en compte.
+          <div className="inscription-confirmation-box">
+            <p className="home-form-p">Votre demande d’inscription a bien été prise en compte.
               <br/>
               Vous allez recevoir une confirmation par mail, en attendant vous pouvez télécharger l’application.
             </p>
-            <div>
+            <div className="app-box">
               <img src="/app-store.png" alt="app store" />
               <img src="/google-play.png" alt="google play" />
             </div>
