@@ -15,6 +15,15 @@ export const InputTextComponentView: ComponentStory<
   typeof InputComponent
 > = (args) => <InputComponent {...args} />;
 
+export const PasswordInput: ComponentStory<
+  typeof InputComponent
+> = (args) => <InputComponent {...args} />;
+
 InputTextComponentView.args = {
   label: 'Label',
+};
+
+PasswordInput.args = {
+  label: 'Mot de passe',
+  type: "password"
 };

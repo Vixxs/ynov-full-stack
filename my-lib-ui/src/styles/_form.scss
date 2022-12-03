@@ -1,12 +1,17 @@
 .my-lib-ui {
   &-form-field {
     background: #F9F9F9;
+    position: relative;
     display: flex;
     height: 60px;
     flex-direction: column;
     padding: 0px 15px;
     align-items: flex-start;
     justify-content: center;
+    img{
+      position: absolute;
+      right: 13px;
+    }
   }
   &-label {
     order: 0;
@@ -21,7 +26,6 @@
     &-text-focus{
       border-bottom: solid 2px black ;
     } 
-
     &::placeholder{
       color: #7D7D7D;
     }
