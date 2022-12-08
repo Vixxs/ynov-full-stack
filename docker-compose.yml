@@ -1,25 +1,19 @@
-version: '3.1'
-
+version: "3.8"
 services:
-  storybook:
-    build: 
-      context: .
-      target: storybook
-    container_name: storybook
+  # MySQL database service
+  db:
+    image: mysql:5.7
+    container_name: mysql-db
     ports:
-      - "3001:3001"
-    volumes:
-      - ./my-lib-ui:/usr/app
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: lesson
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    networks:
+      - app-network
 
-  next-app:
-    links: 
-      - storybook
-    build: 
-      context: .
-      target: next-app
-    container_name: next-app
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./vitrine:/usr/app
-
+networks:
+  app-network:
+    driver: bridge
