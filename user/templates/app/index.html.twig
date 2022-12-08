@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Products{% endblock %}
+
+{% block body %}
+<a class="ml-auto m-2" href={{path('cart')}}>Aller sur le panier</a>
+{% if products is defined  %}
+<div class="grid grid-cols-3 gap-5">
+{% for product in products %}
+    <div>
+        <img class="rounded m-0" src={{product.image}} /> 
+        <div class="flex justify-between mt-2">
+            <label>Figurine de {{product.name}}</label>
+            <span> {{product.price}} €</span>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}
