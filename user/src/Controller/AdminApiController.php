@@ -15,6 +15,7 @@ class AdminApiController extends AbstractController
         $user = $this->getUser();
         return $this->json([
             'message' => "Congratulations you are admin",
+            'id' => $user->getId(),
             'user' => $user->getUserIdentifier(),
             'roles' => $user->getRoles()]
         );
