@@ -1,12 +1,17 @@
-FROM node:16
+FROM node:12
 
 # Create app directory
 WORKDIR /var/www
 
-# RUN npm install
+# Copy the package.json and package-lock.json
+COPY package*.json ./
+
+# Install the dependencies
+RUN npm install
 RUN npm install -g supervisor
-# If you are building your code for production
-# RUN npm ci --only=production
+
+# Copy the rest of the source code
+COPY . .
 
 EXPOSE 8000
 CMD [ "npm", "run", "watchserver" ]
