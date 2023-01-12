@@ -20,20 +20,31 @@ connect:
 
 .PHONY: vitrine lib
 
-install-app: lib vitrine
-
-app:
+start-app:
 	cd ./vitrine; \
     npm run dev;
 
-vitrine:
+build-app: lib vitrine
+
+app: build-app start-app
+
+vitrine: install-vitrine build-vitrine
+
+install-vitrine:
 	cd ./vitrine; \
 	npm install; \
-	yalc add my-lib-ui; \
-	npm run dev;
 
-lib:
+build-vitrine:
+	cd ./vitrine; \
+	yalc add my-lib-ui; \
+
+lib: install-lib build-lib
+
+install-lib:
 	cd ./my-lib-ui; \
 	npm i yalc -g; \
-	npm install; \
+	npm install;
+
+build-lib:
+	cd ./my-lib-ui; \
 	npm run yalc:build;

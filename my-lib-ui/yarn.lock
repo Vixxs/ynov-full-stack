@@ -2257,15 +2257,7 @@
     "ts-dedent" "^2.0.0"
     "util-deprecate" "^1.0.2"
 
-"@storybook/client-logger@^6.4.0":
-  "integrity" "sha512-IrkMr5KZcudX935/C2balFbxLHhkvQnJ78rbVThHDVckQ7l3oIXTh66IMzldeOabVFDZEMiW8AWuGEYof+JtLw=="
-  "resolved" "https://registry.npmjs.org/@storybook/client-logger/-/client-logger-6.5.12.tgz"
-  "version" "6.5.12"
-  dependencies:
-    "core-js" "^3.8.2"
-    "global" "^4.4.0"
-
-"@storybook/client-logger@6.5.13":
+"@storybook/client-logger@^6.4.0", "@storybook/client-logger@6.5.13":
   "integrity" "sha512-F2SMW3LWFGXLm2ENTwTitrLWJgmMXRf3CWQXdN2EbkNCIBHy5Zcbt+91K4OX8e2e5h9gjGfrdYbyYDYOoUCEfA=="
   "resolved" "https://registry.npmjs.org/@storybook/client-logger/-/client-logger-6.5.13.tgz"
   "version" "6.5.13"
