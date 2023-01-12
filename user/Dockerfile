@@ -5,7 +5,6 @@ RUN apt-get update && apt-get install -y git unzip
 
 # Install PHP extensions
 RUN docker-php-ext-install pdo_mysql
-
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 # Get latest Composer

@@ -17,6 +17,7 @@ services:
     working_dir: /var/www/
     volumes:
       - ./proxy:/var/www
+      - /var/www/node_modules
     networks:
       - app-network
     ports:
