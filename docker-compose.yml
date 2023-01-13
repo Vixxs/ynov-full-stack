@@ -11,6 +11,22 @@ services:
     networks:
       - app-network
 
+  next:
+    build:
+      context: ./
+      dockerfile: ./vitrine/Dockerfile
+    container_name: next
+    working_dir: /var/www/
+    volumes:
+      - ./vitrine:/var/www
+      - /var/www/node_modules
+      - ./my-lib-ui:/my-lib-ui
+      - /var/my-lib-ui/node_modules
+    networks:
+      - app-network
+    ports:
+      - "3000:3000"
+
   proxy:
     build: ./proxy
     container_name: service-proxy
@@ -21,7 +37,7 @@ services:
     networks:
       - app-network
     ports:
-      - 8000:8000
+      - "8000:8000"
 
   # MySQL database service
   db:
@@ -50,7 +66,7 @@ services:
   phpmyadmin:
     image: phpmyadmin
     ports:
-      - 8080:80
+      - "8080:80"
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=db
