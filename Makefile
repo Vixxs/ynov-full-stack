@@ -40,7 +40,7 @@ vendor:
 	$(COMPOSER) install
 
 generate-jwt:
-	$(SYMFONY) lexik:jwt:generate-keypair
+	$(SYMFONY) lexik:jwt:generate-keypair --overwrite
 
 build-lib:
 	$(DOCKER_EXEC) -w /var/my-lib-ui next npm install
