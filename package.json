@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-data-table-component": "^7.5.3",
+    "react-modal": "^3.16.1"
+  }
+}
