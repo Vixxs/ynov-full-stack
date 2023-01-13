@@ -33,35 +33,25 @@ db: vendor
 migration: vendor
 	$(SYMFONY) doctrine:migrations:diff
 
-.PHONY: vitrine lib
+.PHONY: my-lib-ui vitrine
+
+app: build-app start-app
 
 start-app:
 	cd ./vitrine; \
     npm run dev;
 
-build-app: lib vitrine
+build-app: my-lib-ui vitrine
 
-app: build-app start-app
-
-vitrine: install-vitrine build-vitrine
-
-install-vitrine:
+vitrine:
 	cd ./vitrine; \
-	npm install; \
-
-build-vitrine:
-	cd ./vitrine; \
+	npm install --legacy-peer-deps; \
 	yalc add my-lib-ui; \
 
-lib: install-lib build-lib
-
-install-lib:
+my-lib-ui:
 	cd ./my-lib-ui; \
 	npm i yalc -g; \
-	npm install;
-
-build-lib:
-	cd ./my-lib-ui; \
+	npm install --legacy-peer-deps; \
 	npm run yalc:build;
 
 vendor:
