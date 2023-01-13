@@ -26,7 +26,7 @@ logs:
 connect: start
 	$(CONNECT) sh
 
-db: vendor
+db: vendor generate-jwt
 	@$(EXEC_USER) php -r 'echo "Wait database...\n"; set_time_limit(30); require __DIR__."/vendor/autoload.php"; (new \Symfony\Component\Dotenv\Dotenv())->usePutenv(true)->bootEnv(__DIR__."/.env") ;$$u=parse_url(getenv("DATABASE_URL"));set_time_limit(60);for(;;){if(@fsockopen($$u["host"],$$u["port"])){break;}echo "Waiting for database\n";sleep(1);}'
 	$(SYMFONY) doctrine:database:drop --force || true
 	$(SYMFONY) doctrine:database:create
@@ -38,6 +38,9 @@ migration: vendor
 
 vendor:
 	$(COMPOSER) install
+
+generate-jwt:
+	$(SYMFONY) lexik:jwt:generate-keypair
 
 build-lib:
 	$(DOCKER_EXEC) -w /var/my-lib-ui next npm install
