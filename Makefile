@@ -1,22 +1,37 @@
+DOCKER_COMPOSE	= docker compose
+EXEC_USER        = docker exec service-user
+CONNECT    = docker compose exec user
+SYMFONY         = $(EXEC_USER) php bin/console
+COMPOSER        = $(EXEC_USER) composer
+
 run:
-	docker-compose up -d
+	$(DOCKER_COMPOSE) up -d --remove-orphans
 
 install:
-	docker-compose up -d --build
+	$(DOCKER_COMPOSE) up -d --build
 
 stop:
-	docker-compose down
+	$(DOCKER_COMPOSE) down
 
 build:
-	docker-compose build
+	$(DOCKER_COMPOSE) build
 
 restart: stop run
 
 logs:
-	docker-compose logs -f
+	$(DOCKER_COMPOSE) logs -f
 
-connect:
-	docker-compose exec user sh
+connect: run
+	$(CONNECT) sh
+
+db: vendor
+	@$(EXEC_USER) php -r 'echo "Wait database...\n"; set_time_limit(30); require __DIR__."/vendor/autoload.php"; (new \Symfony\Component\Dotenv\Dotenv())->usePutenv(true)->bootEnv(__DIR__."/.env") ;$$u=parse_url(getenv("DATABASE_URL"));set_time_limit(60);for(;;){if(@fsockopen($$u["host"],$$u["port"])){break;}echo "Waiting for database\n";sleep(1);}'
+	$(SYMFONY) doctrine:database:drop --force || true
+	$(SYMFONY) doctrine:database:create
+	$(SYMFONY) doctrine:migrations:migrate --no-interaction --allow-no-migration
+
+migration: vendor
+	$(SYMFONY) doctrine:migrations:diff
 
 .PHONY: vitrine lib
 
@@ -48,3 +63,6 @@ install-lib:
 build-lib:
 	cd ./my-lib-ui; \
 	npm run yalc:build;
+
+vendor:
+	$(COMPOSER) install
