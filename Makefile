@@ -31,6 +31,7 @@ db: vendor
 	$(SYMFONY) doctrine:database:drop --force || true
 	$(SYMFONY) doctrine:database:create
 	$(SYMFONY) doctrine:migrations:migrate --no-interaction --allow-no-migration
+	$(SYMFONY) doctrine:fixtures:load  --no-interaction
 
 migration: vendor
 	$(SYMFONY) doctrine:migrations:diff
