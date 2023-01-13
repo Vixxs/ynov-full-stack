@@ -10,7 +10,7 @@ RUN npm run yalc:build
 WORKDIR /var/www
 COPY ./vitrine/package.json .
 RUN yalc add my-lib-ui
-RUN npm install --legacy-peer-deps
+RUN npm install
 COPY ./vitrine/ .
 # Expose the port that the application will run on
 EXPOSE 3000

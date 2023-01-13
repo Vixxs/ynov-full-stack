@@ -1,27 +1,29 @@
 DOCKER_COMPOSE	= docker compose
-EXEC_USER        = docker exec service-user
+DOCKER_EXEC        = docker exec
+
+EXEC_USER        = $(DOCKER_EXEC) service-user
 CONNECT    = docker compose exec user
 SYMFONY         = $(EXEC_USER) php bin/console
 COMPOSER        = $(EXEC_USER) composer
 
-run:
+start:
 	$(DOCKER_COMPOSE) up -d --remove-orphans
 
 install:
 	$(DOCKER_COMPOSE) up -d --build
 
-stop:
+kill:
 	$(DOCKER_COMPOSE) down
 
 build:
 	$(DOCKER_COMPOSE) build
 
-restart: stop run
+restart: kill start
 
 logs:
 	$(DOCKER_COMPOSE) logs -f
 
-connect: run
+connect: start
 	$(CONNECT) sh
 
 db: vendor
@@ -33,26 +35,11 @@ db: vendor
 migration: vendor
 	$(SYMFONY) doctrine:migrations:diff
 
-.PHONY: my-lib-ui vitrine
-
-app: build-app start-app
-
-start-app:
-	cd ./vitrine; \
-    npm run dev;
-
-build-app: my-lib-ui vitrine
-
-vitrine:
-	cd ./vitrine; \
-	npm install --legacy-peer-deps; \
-	yalc add my-lib-ui; \
-
-my-lib-ui:
-	cd ./my-lib-ui; \
-	npm i yalc -g; \
-	npm install --legacy-peer-deps; \
-	npm run yalc:build;
-
 vendor:
 	$(COMPOSER) install
+
+build-lib:
+	$(DOCKER_EXEC) -w /var/my-lib-ui next npm install
+	$(DOCKER_EXEC) -w /var/my-lib-ui next npm run yalc:build
+	$(DOCKER_EXEC) next yalc add my-lib-ui
+	$(DOCKER_EXEC) next npm install
