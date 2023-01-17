@@ -20,12 +20,13 @@ services:
     volumes:
       - ./vitrine:/var/www
       - /var/www/node_modules
-      - ./my-lib-ui:/my-lib-ui
+      - ./my-lib-ui:/var/my-lib-ui
       - /var/my-lib-ui/node_modules
     networks:
       - app-network
     ports:
       - "3000:3000"
+      - "9000:9000"
 
   proxy:
     build: ./proxy
