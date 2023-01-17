@@ -3,7 +3,7 @@ import {
   endPointServiceUserCheckRole,
   endPointServiceUserInfo,
   endPointServiceUserLogin,
-} from "./types";
+} from "../../types";
 
 export const connection = (username: string, password: string) => {
   return new Promise((resolve) => {

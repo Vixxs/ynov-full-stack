@@ -2,25 +2,19 @@ import { Express } from "express";
 import axios from "axios";
 
 import {
-  endPointServiceFutureUserList,
   endPointServiceUserAdminInfo,
   endPointServiceUserHello,
   endPointServiceUserList,
   urlApiAdminInfo,
   urlApiCheckRole,
-  urlApiFutureUserList,
-  urlApiRegistration,
   urlApiUser,
   urlApiUserInfo,
   urlApiUserLogin,
   urlApiUserList,
-  urlApiValidateRegistration,
-  endPointServiceUserRegistration,
-  endPointServiceUserValidateRegistration,
-} from "../types";
-import { checkRole, checkUserInfo, connection } from "../userFunctions";
+} from "../../types";
+import { checkRole, checkUserInfo, connection } from "./userFunctions";
 
-const initUrls = (app: Express) => {
+const userApi = (app: Express) => {
   app.get(urlApiUser, (_, res) => {
     axios.get(endPointServiceUserHello).then((onfulfilled) => {
       res.send(onfulfilled.data);
@@ -71,56 +65,6 @@ const initUrls = (app: Express) => {
       res.send(onfulfilled);
     });
   });
-
-  app.get(urlApiFutureUserList, (req, res) => {
-    axios
-      .get(endPointServiceFutureUserList, {
-        headers: {
-          Authorization: req.header("Authorization"),
-        },
-      })
-      .then((apiRes) => {
-        res.json(apiRes.data);
-      })
-      .catch((err) => {
-        res.status(err.response.status).json(err.response.data);
-      });
-  });
-
-  app.post(urlApiRegistration, (req, res) => {
-    const data = req.body;
-    axios
-      .post(
-        endPointServiceUserRegistration,
-        {data}
-      )
-      .then((apiRes) => {
-        res.json(apiRes.data);
-      })
-      .catch((err) => {
-        res.status(err.response.status).json(err.response.data);
-      });
-  });
-
-  app.post(urlApiValidateRegistration, (req, res) => {
-      const data = req.body;
-      const id = req.params.id;
-      axios
-        .post(endPointServiceUserValidateRegistration + id,
-          data,
-          {
-            headers: {
-              Authorization: req.header("Authorization"),
-            },
-          })
-        .then((apiRes) => {
-          res.json(apiRes.data);
-        })
-        .catch((err) => {
-          res.status(err.response.status).json(err.response.data);
-        });
-    }
-  );
 };
 
-export default { initUrls };
+export default { userApi };

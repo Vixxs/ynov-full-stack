@@ -2,7 +2,8 @@ import express from "express";
 import bodyParser from "body-parser";
 
 import checkToken from "./middlewares/checkToken";
-import userService from "./services/user";
+import userService from "./services/user/user";
+import futureUserService from "./services/future-user/futureUser";
 
 import { urlApi } from "./types";
 const app = express();
@@ -20,4 +21,5 @@ app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port}`);
 });
 
-userService.initUrls(app);
+userService.userApi(app);
+futureUserService.futureUserApi(app);
