@@ -1,8 +1,9 @@
 DOCKER_COMPOSE	= docker compose
-DOCKER_EXEC        = docker exec
+DOCKER_EXEC   	= docker exec
 
-EXEC_USER        = $(DOCKER_EXEC) service-user
-CONNECT    = docker compose exec user
+EXEC_USER       = $(DOCKER_EXEC) service-user
+EXEC_PROXY		= $(DOCKER_EXEC) service-proxy
+CONNECT    		= docker compose exec user
 SYMFONY         = $(EXEC_USER) php bin/console
 COMPOSER        = $(EXEC_USER) composer
 
@@ -47,3 +48,6 @@ build-lib:
 	$(DOCKER_EXEC) -w /var/my-lib-ui next npm run yalc:build
 	$(DOCKER_EXEC) next yalc add my-lib-ui
 	$(DOCKER_EXEC) next npm install
+
+build-proxy:
+	$(EXEC_PROXY) npm run build
