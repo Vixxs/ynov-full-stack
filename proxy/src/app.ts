@@ -7,8 +7,9 @@ import futureUserService from "./services/future-user/futureUser";
 
 import { urlApi } from "./types";
 const app = express();
+const cors = require('cors')
 const port = 8000;
-
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(checkToken());
