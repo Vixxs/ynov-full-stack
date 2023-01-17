@@ -1,6 +1,9 @@
 .my-lib-ui {
     &-radio {
         &-input{
+            &:hover{
+              cursor: pointer;
+            }
             &:checked + label::after{
                 background-color: black;
             }
@@ -13,6 +16,9 @@
             font-size: 16px;
             line-height: 16px;
             font-family: 'Abel', sans-serif;
+            &:hover{
+              cursor: pointer;
+            }
             &::before{
                 content: '';
                 position: absolute;
