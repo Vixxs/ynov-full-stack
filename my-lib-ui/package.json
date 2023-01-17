@@ -22,7 +22,7 @@
     "yalc:build": "npm run sass:build && npm run build &&  yalc publish --private",
     "sass:build": "sass src && sass src/index.css dist/index.css",
     "sass:watch": "sass -w src",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook -p 9000"
   },
   "peerDependencies": {
     "react": "^16.0.0"
