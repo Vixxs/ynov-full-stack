@@ -99,11 +99,6 @@ class FutureUser
         return $this;
     }
 
-    public function isRegistrationState(): ?bool
-    {
-        return $this->registrationState;
-    }
-
     public function setRegistrationState(bool $registrationState): self
     {
         $this->registrationState = $registrationState;
@@ -135,21 +130,11 @@ class FutureUser
 
     public function validate(): void
     {
-        $this->createUser();
         $this->setRegistrationState(true);
     }
 
-    private function createUser(): void
+    public function isVerified(): bool
     {
-        $user = new User();
-        $user->setEmail($this->email);
-        $user->setPassword($this->randomPassword());
-        $this->setUser($user);
-    }
-
-    private function randomPassword( int $length = 8 ): string
-    {
-        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
-        return substr( str_shuffle( $chars ), 0, $length );
+        return $this->registrationState === true;
     }
 }

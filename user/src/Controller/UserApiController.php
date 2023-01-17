@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/api/user', name: 'app_user_api')]
+#[Route('/api/user')]
 class UserApiController extends AbstractController
 {
     
@@ -26,12 +26,21 @@ class UserApiController extends AbstractController
     #[Route('/users', methods: "GET")]
     public function usersList(UserRepository $userRepository): JsonResponse
     {
+        $arrayUsers = array();
         $users = $userRepository->findAll();
-        return $this->json(json_encode($users));
+        foreach ($users as $user){
+            $arrayUsers[] = [
+                'id' => $user->getId(),
+                'user' => $user->getUserIdentifier(),
+                'roles' => $user->getRoles()
+            ];
+        }
+
+        return $this->json($arrayUsers);
     }
 
 
-    #[Route('/check_role', name: 'app_user_api_check_role', methods: "POST")]
+    #[Route('/check_role', methods: "POST")]
     public function checkRole(Request $request): JsonResponse
     {
         $user = $this->getUser();

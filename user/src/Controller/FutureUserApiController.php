@@ -15,6 +15,16 @@ class FutureUserApiController extends AbstractController
     public function index(FutureUserRepository $futureUserRepository): JsonResponse
     {
         $futureUsers = $futureUserRepository->findAll();
-        return $this->json(json_encode($futureUsers));
+        $responseData = [];
+        foreach ($futureUsers as $futureUser) {
+            $responseData[] = [
+                'id' => $futureUser->getId(),
+                'firstname' => $futureUser->getFirstname(),
+                'lastname' => $futureUser->getLastname(),
+                'email' => $futureUser->getEmail(),
+                'phoneNumber' => $futureUser->getPhoneNumber(),
+            ];
+        }
+        return $this->json($responseData);
     }
 }
