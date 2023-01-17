@@ -1,10 +1,9 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 const api = "http://localhost:8000/api/.user/user";
+const [isAuthenticated, setIsAuthenticated] = useState(false);
 const useAuth = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  if (typeof window === "undefined") return null;
-  const token = localStorage.getItem('token');
+  const token = window.localStorage.getItem('token');
   let role;
 
   axios.get(api, {
