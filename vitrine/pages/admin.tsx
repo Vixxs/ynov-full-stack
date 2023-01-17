@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import FooterComponent from "../components/FooterComponent";
 import HeadComponent from "../components/HeadComponent";
 import HeaderComponent from "../components/HeaderComponent";
+import useAuth from "../hook/useAuth";
 
 const data = [
   {
@@ -81,24 +82,20 @@ const data = [
   ]
 
 const Admin: NextPage = () => {
+  const {role} = useAuth();
   const router = useRouter();
-  return (
-    <div id="login">
-      <HeadComponent />
-      <HeaderComponent />
-      <div className="login-page">
-          <main>
-            <div className="login-box">
-              <a className="button-goback" href="javascript:history.back()">
-                ← retour
-              </a>
-              <Datatable data={data}/>
-            </div>
-          </main>
-      </div>
-      <FooterComponent />
-    </div>
-  );
+  if (role === "admin") {
+    return (
+      <>
+        <HeadComponent />
+        <HeaderComponent />
+        <main>
+          <h1>GESTION BACK-OFFICE</h1>
+        </main>
+        <FooterComponent />
+      </>
+    );
+  }
 };
 
 export default Admin;
