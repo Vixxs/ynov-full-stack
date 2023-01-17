@@ -2,7 +2,7 @@ import Head from "next/head";
 import { ButtonComponent } from "my-lib-ui";
 
 const onClick = (e: any) => {
-  window.location.assign('/admin');
+  window.location.assign('/login');
 }
 
 const HeaderComponent: React.FC = () => {
