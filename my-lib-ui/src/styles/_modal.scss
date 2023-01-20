@@ -1,0 +1,55 @@
+.my-lib-ui {
+  &-modal {
+    h3 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: 21px;
+      color: #C00000;
+      margin: 0;
+      margin-bottom: 16px;
+    }
+    form {
+      *{
+        box-sizing: border-box;
+        width: 100%;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    .content {
+      min-width: 350px;
+      background: white;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .delete button{
+      background: black;
+    }
+    .cancel{
+      &:hover{
+        cursor: pointer;
+      }
+      margin-top: 12px;
+      padding: 12px;
+      background : transparent;
+      border: none;
+      color: black;
+      text-decoration: underline;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.25);
+  }
+}
