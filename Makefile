@@ -13,6 +13,9 @@ start:
 install:
 	$(DOCKER_COMPOSE) up -d --build
 
+stop:
+	$(DOCKER_COMPOSE) stop
+
 kill:
 	$(DOCKER_COMPOSE) down
 

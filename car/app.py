@@ -12,6 +12,9 @@ db.init_app(app)
 def create_table():
     db.create_all()
 
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    return redirect('/car')
 
 @app.route('/car/create', methods=['GET', 'POST'])
 def create():
