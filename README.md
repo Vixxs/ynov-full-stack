@@ -11,6 +11,7 @@ Attention le 'make db' drop et recréer la base de donnée. Pour le service car 
 - Flask: http://localhost:5000/
 - Proxy(Express.js): http://localhost:8000/
 - Front(Next.js): http://localhost:3000/
+- Storybook: http://localhost:9000/ (faire 'make storybook' pour le lancer)
 
 ## Command dev
 - make build-lib
