@@ -6,8 +6,8 @@ type Props = {
 };
 const ReadInputComponent: React.FC<Props> = ({label, value}) => {
   return (
-    <div className="my-lib-read-input">
-      <label >{label}</label>
+    <div className="my-lib-ui-read-input">
+      <label>{label}</label>
       <span>{value}</span>
     </div>
   );
