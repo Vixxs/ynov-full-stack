@@ -17,7 +17,6 @@ Attention le 'make db' drop et recréer la base de donnée.
 - Storybook: http://localhost:9000/ (faire 'make storybook' pour le lancer)
 
 ## Command dev
-- make build-lib
 - make connect (se connecter au conteneur service-user)
 - make migration (jouer les migrations symfony)
 - make build-lib (rebuild my-lib-ui et la mettre à jour dans vitrine)
