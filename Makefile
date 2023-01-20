@@ -3,6 +3,7 @@ DOCKER_EXEC   	= docker exec
 
 EXEC_USER       = $(DOCKER_EXEC) service-user
 EXEC_PROXY		= $(DOCKER_EXEC) service-proxy
+FLASK         	= $(DOCKER_EXEC) service-car
 CONNECT    		= docker compose exec user
 SYMFONY         = $(EXEC_USER) php bin/console
 COMPOSER        = $(EXEC_USER) composer
@@ -36,6 +37,7 @@ db: vendor generate-jwt
 	$(SYMFONY) doctrine:database:create
 	$(SYMFONY) doctrine:migrations:migrate --no-interaction --allow-no-migration
 	$(SYMFONY) doctrine:fixtures:load  --no-interaction
+	$(FLASK) python db.py
 
 migration: vendor
 	$(SYMFONY) doctrine:migrations:diff

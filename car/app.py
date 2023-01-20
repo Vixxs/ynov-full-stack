@@ -1,16 +1,6 @@
 from flask import Flask,render_template,request,redirect,jsonify
-from models import db,CarModel
-import json
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://admin:admin@db:3306/lesson'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-db.init_app(app)
-
-@app.before_first_request
-def create_table():
-    db.create_all()
+from models import CarModel
+from db import db, app
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
