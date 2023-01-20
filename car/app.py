@@ -29,7 +29,7 @@ def RetrieveList():
 
 @app.route('/car/<int:id>', methods=['GET'])
 def RetrieveEmployee(id):
-    car = CarModel.query.filter_by(id=id).first()
+    car = CarModel.query.get(id)
     if car:
         return jsonify(car)
     return jsonify({"message": f"Car with id={id} Doens't exist"})
@@ -37,7 +37,7 @@ def RetrieveEmployee(id):
 
 @app.route('/car/<int:id>/update', methods=['POST'])
 def update(id):
-    car = CarModel.query.filter_by(id=id).first()
+    car = CarModel.query.get(id)
     if car:
         data = json.loads(request.data)
 
@@ -52,7 +52,7 @@ def update(id):
 
 @app.route('/car/<int:id>/delete', methods=['POST'])
 def delete(id):
-    car = CarModel.query.filter_by(id=id).first()
+    car = CarModel.query.get(id)
     if car:
         db.session.delete(car)
         db.session.commit()
