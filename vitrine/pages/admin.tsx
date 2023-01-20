@@ -1,4 +1,5 @@
 import type {NextPage} from "next";
+<<<<<<< HEAD
 import FooterComponent from "../components/FooterComponent";
 import HeadComponent from "../components/HeadComponent";
 import HeaderComponent from "../components/HeaderComponent";
@@ -73,10 +74,19 @@ const Admin: NextPage = () => {
     }
   ];
 
+=======
+import {useRouter} from "next/router";
+import FooterComponent from "../components/FooterComponent";
+import HeadComponent from "../components/HeadComponent";
+import HeaderComponent from "../components/HeaderComponent";
+
+const Admin: NextPage = () => {
+>>>>>>> 18be1a2 (fix: update admin page and table/modal)
   return (
     <>
       <HeadComponent/>
       <HeaderComponent/>
+<<<<<<< HEAD
       <main id="admin">
         <div class="admin-container">
           <h1>GESTION BACK-OFFICE</h1>
@@ -91,6 +101,11 @@ const Admin: NextPage = () => {
             </div>
           </div>
           <UserTableComponent data={data} />
+=======
+      <main>
+        <h1>GESTION BACK-OFFICE</h1>
+        <div>
+>>>>>>> 18be1a2 (fix: update admin page and table/modal)
         </div>
       </main>
       <FooterComponent/>
