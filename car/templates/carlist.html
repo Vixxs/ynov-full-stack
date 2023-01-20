@@ -1,8 +1,0 @@
-<a href="/car/create">Create new car</a>
-{% for car in cars %}
-<h3>{{car}}</h3>
-<img src="{{car.image}}">
-<a href="/car/{{car.id}}/update">Update</a>
-<a href="/car/{{car.id}}">Details</a>
-<hr>
-{% endfor %}

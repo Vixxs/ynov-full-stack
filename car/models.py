@@ -1,9 +1,15 @@
 from flask_sqlalchemy import SQLAlchemy
+from dataclasses import dataclass
 
 db = SQLAlchemy()
 
+@dataclass
 class CarModel(db.Model):
     __tablename__ = "car"
+    id: int
+    name: str
+    price: float
+    image: str
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150))

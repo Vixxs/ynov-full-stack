@@ -1,67 +1,62 @@
-from flask import Flask,render_template,request,redirect,jsonify
+from flask import Flask, render_template, request, redirect, jsonify
 from models import CarModel
 from db import db, app
+import json
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return redirect('/car')
 
-@app.route('/car/create', methods=['GET', 'POST'])
-def create():
-    if request.method == 'GET':
-        return render_template('createcar.html')
 
-    if request.method == 'POST':
-        name = request.form['name']
-        price = request.form['price']
-        image = request.form['image']
-        car = CarModel(name=name, price=price, image=image)
-        db.session.add(car)
-        db.session.commit()
-        return redirect('/car')
+@app.route('/car/create', methods=['POST'])
+def create():
+    data = json.loads(request.data)
+    name = data['name']
+    price = data['price']
+    image = data['image']
+    car = CarModel(name=name, price=price, image=image)
+    db.session.add(car)
+    db.session.commit()
+    return jsonify(f"Car with id {car.id} create successfully !")
 
 
 @app.route('/car')
 def RetrieveList():
     cars = CarModel.query.all()
-    return render_template('carlist.html', cars=cars)
+    return jsonify(cars)
 
 
-@app.route('/car/<int:id>')
+@app.route('/car/<int:id>', methods=['GET'])
 def RetrieveEmployee(id):
     car = CarModel.query.filter_by(id=id).first()
     if car:
-        return render_template('car.html', car=car)
-    return f"Car with id ={id} Doenst exist"
+        return jsonify(car)
+    return jsonify(f"Car with id={id} Doenst exist")
 
 
-@app.route('/car/<int:id>/update', methods=['GET', 'POST'])
+@app.route('/car/<int:id>/update', methods=['POST'])
 def update(id):
     car = CarModel.query.filter_by(id=id).first()
-    if request.method == 'POST':
-        if car:
-            car.name = request.form['name']
-            car.price = request.form['price']
-            car.image = request.form['image']
-            db.session.add(car)
-            db.session.commit()
-            return redirect(f'/car/{id}')
-        return f"Car with id = {id} Does not exist"
+    if car:
+        data = json.loads(request.data)
 
-    return render_template('updatecar.html', car=car)
+        car.name = data['name'] if "name" in data else car.name
+        car.price = data['price'] if "price" in data else car.price
+        car.image = data['image'] if "image" in data else car.image
+        db.session.add(car)
+        db.session.commit()
+        return jsonify(f"Car with id={id} updated")
+    return jsonify({"message" : f"Car with id={id} Doenst exist"})
 
 
-@app.route('/car/<int:id>/delete', methods=['GET', 'POST'])
+@app.route('/car/<int:id>/delete', methods=['POST'])
 def delete(id):
     car = CarModel.query.filter_by(id=id).first()
-    if request.method == 'POST':
-        if car:
-            db.session.delete(car)
-            db.session.commit()
-            return redirect('/car')
-        abort(404)
-
-    return render_template('delete.html')
-
+    if car:
+        db.session.delete(car)
+        db.session.commit()
+        return jsonify(f"Car with id={id} deleted")
+    abort(404)
 
 app.run(host='localhost', port=5000)
