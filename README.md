@@ -2,6 +2,9 @@
 ## Lancer le projet 
 - Installer make
 - make install (pour build et start les conteneurs)
+- make kill (pour down les conteneurs)
+- make stop (pour stop les conteneurs)
+- make start (pour start les conteneurs)
 - make db (pour charger la base de données )
 Attention le 'make db' drop et recréer la base de donnée. Pour le service car penser a faire le make db avant de faire la première requête qui créer la table car sinon la table car sera supprimé par la commande
 - make storybook (pour lancer le storybook sur http://localhost:9000/)
