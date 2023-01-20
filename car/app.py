@@ -18,7 +18,7 @@ def create():
     car = CarModel(name=name, price=price, image=image)
     db.session.add(car)
     db.session.commit()
-    return jsonify(f"Car with id {car.id} create successfully !")
+    return jsonify({"message": f"Car with id {car.id} create successfully !"})
 
 
 @app.route('/car')
@@ -32,7 +32,7 @@ def RetrieveEmployee(id):
     car = CarModel.query.filter_by(id=id).first()
     if car:
         return jsonify(car)
-    return jsonify(f"Car with id={id} Doenst exist")
+    return jsonify({"message": f"Car with id={id} Doens't exist"})
 
 
 @app.route('/car/<int:id>/update', methods=['POST'])
@@ -46,8 +46,8 @@ def update(id):
         car.image = data['image'] if "image" in data else car.image
         db.session.add(car)
         db.session.commit()
-        return jsonify(f"Car with id={id} updated")
-    return jsonify({"message" : f"Car with id={id} Doenst exist"})
+        return jsonify({"message": f"Car with id={id} updated"})
+    return jsonify({"message": f"Car with id={id} Doens't exist"})
 
 
 @app.route('/car/<int:id>/delete', methods=['POST'])
@@ -56,7 +56,8 @@ def delete(id):
     if car:
         db.session.delete(car)
         db.session.commit()
-        return jsonify(f"Car with id={id} deleted")
-    abort(404)
+        return jsonify({"message": f"Car with id={id} deleted"})
+    return jsonify({"message": f"Car with id={id} Doesn't exist"})
+
 
 app.run(host='localhost', port=5000)
