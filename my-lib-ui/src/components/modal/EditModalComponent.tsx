@@ -8,7 +8,6 @@ import {SelectComponent} from "../../index";
 const EditModal: React.FC<ModalProps> = ({
     isOpen,
     onClose,
-    onSave,
     data,
 }) => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -20,10 +19,10 @@ const EditModal: React.FC<ModalProps> = ({
     return (
         <Modal label="Modifier l’utilisateur" isOpen={isOpen} onRequestClose={onClose}>
           <form onSubmit={handleSubmit}>
-            <InputComponent name="lastName" type="text" label="Nom" value={data.lastName}></InputComponent>
-            <InputComponent name="firstName" label="Prénom" value={data.firstName}></InputComponent>
-            <InputComponent name="email" label="E-mail" type="email" value={data.email}></InputComponent>
-            <InputComponent name="phoneNumber" label="Numéro de téléphone" value={data.phone}></InputComponent>
+            <InputComponent name="lastName" type="text" label="Nom" defaultValue={data.lastName}></InputComponent>
+            <InputComponent name="firstName" label="Prénom" defaultValue={data.firstName}></InputComponent>
+            <InputComponent name="email" label="E-mail" type="email" defaultValue={data.email}></InputComponent>
+            <InputComponent name="phoneNumber" label="Numéro de téléphone" defaultValue={data.phone}></InputComponent>
             <SelectComponent name="nationality" label="Nationalité">
                 <option value={data.nationality}>{data.nationality}</option>
             </SelectComponent>

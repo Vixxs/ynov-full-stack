@@ -1,15 +1,23 @@
 import React from "react";
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 
-import Table from "./TableComponent";
+import UserTableComponent from "./UserTableComponent";
 
 import "../../index.css";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'UI/TableComponent',
-  component: Table,
-} as ComponentMeta<typeof Table>;
+  component: UserTableComponent,
+} as ComponentMeta<typeof UserTableComponent>;
+
+const columns = [
+  "Statut",
+  "Nom / Prénom",
+  "Coordonnées",
+  "Nationalité",
+  "Actions"
+];
 
 const data = [
   {
@@ -79,10 +87,13 @@ const data = [
 ]
 
 export const TableComponentView: ComponentStory<
-  typeof Table
+  typeof UserTableComponent
 > = (args) => (
-  <Table data={data} {...args}>
-  </Table>
+  <UserTableComponent {...args}>
+  </UserTableComponent>
 );
 
-TableComponentView.args = {};
+TableComponentView.args = {
+  data: data,
+  columns: columns,
+};
