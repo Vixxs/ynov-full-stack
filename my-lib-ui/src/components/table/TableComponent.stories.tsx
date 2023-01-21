@@ -11,14 +11,6 @@ export default {
   component: UserTableComponent,
 } as ComponentMeta<typeof UserTableComponent>;
 
-const columns = [
-  "Statut",
-  "Nom / Prénom",
-  "Coordonnées",
-  "Nationalité",
-  "Actions"
-];
-
 const data = [
   {
     status: false,
@@ -95,5 +87,4 @@ export const TableComponentView: ComponentStory<
 
 TableComponentView.args = {
   data: data,
-  columns: columns,
 };

@@ -6,11 +6,18 @@ import UserRowComponent from "../row/UserRowComponent";
 import TableComponent from "./TableComponent";
 
 interface UserTableProps {
-  columns: string[];
   data: FormData[];
 }
 
-const UserTableComponent: React.FC<UserTableProps> = ({columns, data}) => {
+const columns = [
+  "Statut",
+  "Nom / Prénom",
+  "Coordonnées",
+  "Nationalité",
+  "Actions"
+];
+
+const UserTableComponent: React.FC<UserTableProps> = ({data}) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedRow, setSelectedRow] = useState<FormData | null>(data[0]);
   const openModal = (index: number) => {
@@ -28,7 +35,7 @@ const UserTableComponent: React.FC<UserTableProps> = ({columns, data}) => {
   };
 
   return (
-    <>
+    <div>
       <TableComponent columns={columns}>
         {data.map((row, index) => (
           <UserRowComponent key={index} row={row} index={index} openModal={openModal}/>
@@ -49,7 +56,7 @@ const UserTableComponent: React.FC<UserTableProps> = ({columns, data}) => {
             data={selectedRow}
           />
       }
-    </>
+    </div>
   );
 };
 
