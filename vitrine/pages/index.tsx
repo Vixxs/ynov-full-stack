@@ -6,7 +6,6 @@ import HeadComponent from "../components/HeadComponent";
 import HeaderComponent from "../components/HeaderComponent";
 import { ButtonComponent, CheckboxComponent, InputComponent, RadioButtonComponent, SelectComponent } from "my-lib-ui";
 
-const api = "http://localhost:8000/api/.user/inscription"
 const Home: NextPage = () => {
   const [message, setMessage] = useState("");
   const [disabled, setDisabled] = useState(true);

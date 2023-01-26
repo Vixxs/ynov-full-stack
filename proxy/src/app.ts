@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(checkToken());
 
 app.get(urlApi, (_, res) => {
-  res.send("Hello API");
+  res.send("User API");
 });
 
 app.listen(port, () => {

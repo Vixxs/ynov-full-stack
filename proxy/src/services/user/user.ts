@@ -1,4 +1,4 @@
-import { Express } from "express";
+import {Express} from "express";
 import axios from "axios";
 
 import {
@@ -10,27 +10,54 @@ import {
   urlApiUser,
   urlApiUserInfo,
   urlApiUserLogin,
-  urlApiUserList,
+  urlApiUserList, endPointServiceUserLogin, endPointServiceUserInfo, endPointServiceUserCheckRole,
 } from "../../types";
-import { checkRole, checkUserInfo, connection } from "./userFunctions";
 
 const userApi = (app: Express) => {
   app.get(urlApiUser, (_, res) => {
-    axios.get(endPointServiceUserHello).then((onfulfilled) => {
-      res.send(onfulfilled.data);
-    });
+    axios.get(endPointServiceUserHello)
+      .then((apiRes) => {
+        res.json(apiRes.data);
+      })
+      .catch((err) => {
+        res.status(err.response.status).json(err.response.data);
+      });
   });
 
   app.post(urlApiUserLogin, (req, res) => {
     const body: { username: string; password: string } = req.body;
-    connection(body.username, body.password).then((data) => {
-      res.send(data);
-    });
+    axios
+      .post(
+        endPointServiceUserLogin,
+        {username: body.username, password: body.password},
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((apiRes) => {
+        res.json(apiRes.data);
+      })
+      .catch((err) => {
+        res.status(err.response.status).json(err.response.data);
+      });
   });
 
   app.get(urlApiUserInfo, (req, res) => {
     const token = req.header("Authorization");
-    checkUserInfo(token).then((onfulfilled) => res.send(onfulfilled));
+    axios
+      .get(endPointServiceUserInfo, {
+        headers: {
+          Authorization: token,
+        },
+      })
+      .then((apiRes) => {
+        res.json(apiRes.data);
+      })
+      .catch((err) => {
+        res.status(err.response.status).json(err.response.data);
+      });
   });
 
   app.get(urlApiUserList, (req, res) => {
@@ -55,16 +82,35 @@ const userApi = (app: Express) => {
           Authorization: req.header("Authorization"),
         },
       })
-      .then((onfulfilled) => res.send(onfulfilled.data));
+      .then((apiRes) => {
+        res.json(apiRes.data);
+      })
+      .catch((err) => {
+        res.status(err.response.status).json(err.response.data);
+      });
   });
 
   app.post(urlApiCheckRole, (req, res) => {
     const body: { role: string } = req.body;
     const token = req.header("Authorization");
-    checkRole(body.role, token).then((onfulfilled) => {
-      res.send(onfulfilled);
-    });
+    axios
+      .post(
+        endPointServiceUserCheckRole,
+        {role: body.role},
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+        }
+      )
+      .then((apiRes) => {
+        res.json(apiRes.data);
+      })
+      .catch((err) => {
+        res.status(err.response.status).json(err.response.data);
+      });
   });
 };
 
-export default { userApi };
+export default {userApi};
