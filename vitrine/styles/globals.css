@@ -33,6 +33,7 @@ header{
   justify-content: space-between;
   background-color: white;
   filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.05));
+  box-sizing: border-box;
 }
 .home-bg{
   width: 100%;
@@ -223,6 +224,10 @@ footer ul li a{
   text-decoration: underline;
 }
 
+.admin-container {
+  align-items: flex-start;
+}
+
 #admin h1{
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -231,4 +236,26 @@ footer ul li a{
   line-height: 25px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  margin-top: 49px;
+  margin-bottom: 32px;
+}
+
+.admin-menu {
+  margin-bottom: 36px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  margin-right: 24px;
+}
+
+.admin-menu .active {
+  font-weight: 500;
+  margin-right: 24px;
+}
+
+.admin-line{
+  border-bottom: 2px solid #C00000;
+  width: 43.5px;
+  height: 0px;
+  position: absolute;
+  margin-top: 17px;
 }

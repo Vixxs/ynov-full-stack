@@ -18,9 +18,10 @@ const Home: NextPage = () => {
        api,
        data,
        ).then((res) => {
-         setMessage(res.data);
+         setMessage(res.data.message);
     })
   };
+
   const checkForm = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDisabled(!e.target.checked);
   };

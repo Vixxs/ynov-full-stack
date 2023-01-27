@@ -78,14 +78,20 @@ const Admin: NextPage = () => {
       <HeadComponent/>
       <HeaderComponent/>
       <main id="admin">
-        <h1>GESTION BACK-OFFICE</h1>
-        <div>
+        <div class="admin-container">
+          <h1>GESTION BACK-OFFICE</h1>
           <div>
-            <span>Liste des utilisateur inscrits</span>
-            <span>Liste des véhicules</span>
+            <div class="admin-menu">
+              <div>
+                <span class="admin-line"> </span>
+                <span class="active">Liste des utilisateur inscrits</span>
+                <span>Liste des véhicules</span>
+              </div>
+              
+            </div>
           </div>
+          <UserTableComponent data={data} />
         </div>
-        <UserTableComponent data={data} />
       </main>
       <FooterComponent/>
     </>
