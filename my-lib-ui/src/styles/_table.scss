@@ -1,10 +1,12 @@
 .my-lib-ui {
   &-table{
+    background: white;
     font-family: 'Abel';
     font-weight: 400;
     font-size: 16px;
+    width: 100%;
     th{
-      padding-right: 16px ;
+      padding: 8px 16px 8px 8px;
       text-align: start;
       font-weight: 400;
     }
