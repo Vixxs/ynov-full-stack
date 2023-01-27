@@ -5,12 +5,15 @@ import {
   endPointServiceUserAdminInfo,
   endPointServiceUserHello,
   endPointServiceUserList,
+  endPointServiceUserLogin,
+  endPointServiceUserInfo,
+  endPointServiceUserCheckRole,
   urlApiAdminInfo,
   urlApiCheckRole,
   urlApiUser,
   urlApiUserInfo,
   urlApiUserLogin,
-  urlApiUserList, endPointServiceUserLogin, endPointServiceUserInfo, endPointServiceUserCheckRole,
+  urlApiUserList,
 } from "../../types";
 
 const userApi = (app: Express) => {
