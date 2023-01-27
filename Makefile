@@ -51,3 +51,6 @@ build-lib:
 
 build-proxy:
 	$(EXEC_PROXY) npm run build
+
+storybook:
+	$(DOCKER_EXEC) -w /var/my-lib-ui next npm run storybook

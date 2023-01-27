@@ -1,0 +1,51 @@
+.my-lib-ui {
+  &-table{
+    font-family: 'Abel';
+    font-weight: 400;
+    font-size: 16px;
+    th{
+      padding-right: 16px ;
+      text-align: start;
+      font-weight: 400;
+    }
+    td{
+      padding: 8px;
+      border-top: 2px solid #F9F9F9;
+      *{
+        width : 100%;
+      }
+    }
+    button{
+      width: 94px;
+      padding: 5px;
+    }
+    .check{
+      button{
+        background-color: black;
+      }
+    }
+    .bold{
+      font-weight: bold;
+    }
+  }
+  &-read-input{
+    label{
+      font-family: 'Abel', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: #C00000;
+      line-height: 20px;
+    }
+    span{
+      font-family: 'Abel', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: black;
+      line-height: 25px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

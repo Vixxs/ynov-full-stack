@@ -33,6 +33,7 @@ header{
   justify-content: space-between;
   background-color: white;
   filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.05));
+  box-sizing: border-box;
 }
 .home-bg{
   width: 100%;
@@ -49,7 +50,7 @@ header{
   padding: 16px 43px;
   margin: 0;
   background-color: white;
-  font-family: 'Abel';
+  font-family: 'Abel', sans-serif;
   font-style: normal;
   font-weight: 400;
   
@@ -72,7 +73,7 @@ header{
   background-color: #C00000;
 }
 header div span{
-  font-family: 'Bayon';
+  font-family: 'Bayon', sans-serif;
   font-size: 39.1476px;
   line-height: 39px;
   margin-left: 17px;
@@ -91,7 +92,7 @@ header div span{
 }
 
 .button-goback {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 16px;
   color: #C00000;
@@ -115,7 +116,7 @@ header div span{
 }
 
 .label-login {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 21px;
   text-transform: uppercase;
   color: #C00000;
@@ -221,4 +222,40 @@ footer ul li{
 }
 footer ul li a{
   text-decoration: underline;
+}
+
+.admin-container {
+  align-items: flex-start;
+}
+
+#admin h1{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 25px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 49px;
+  margin-bottom: 32px;
+}
+
+.admin-menu {
+  margin-bottom: 36px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  margin-right: 24px;
+}
+
+.admin-menu .active {
+  font-weight: 500;
+  margin-right: 24px;
+}
+
+.admin-line{
+  border-bottom: 2px solid #C00000;
+  width: 43.5px;
+  height: 0px;
+  position: absolute;
+  margin-top: 17px;
 }

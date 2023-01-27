@@ -1,12 +1,18 @@
 .my-lib-ui {
     &-checkbox {
         &-input{
+            &:hover{
+              cursor: pointer;
+            }
             &:checked + label::after{
                 background-color: black;
             }
             opacity: 0;
         }
         &-label{
+            &:hover {
+              cursor: pointer;
+            }
             margin-left: 10px;
             position: relative;
             font-weight: 400;

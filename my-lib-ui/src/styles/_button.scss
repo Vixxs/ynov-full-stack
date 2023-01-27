@@ -17,8 +17,11 @@
         &:hover {
             cursor: pointer;
         }
+        &:disabled {
+          background-color: #9b9090;
+        }
         &-field {
-          
+
         }
     }
 }
