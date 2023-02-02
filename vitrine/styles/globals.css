@@ -73,7 +73,7 @@ header{
   height: 1px;
   background-color: #C00000;
 }
-header div span{
+header a span{
   font-family: 'Bayon', sans-serif;
   font-size: 39.1476px;
   line-height: 39px;
@@ -103,7 +103,7 @@ header div span{
   margin-bottom: 24px;
 }
 #admin .my-lib-input-text {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .login-box{
@@ -127,11 +127,10 @@ header div span{
 }
 
 .login-button button {
-  margin-top: 24px;
   width: 326px;
   background: #C00000;
   justify-content: center;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: white;
   display: flex;
@@ -164,7 +163,7 @@ main {
   flex-direction: column;
 }
 .home-form h1{
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 21px;
@@ -199,9 +198,8 @@ footer{
 }
 
 footer p{
-  margin: 0;
-  margin-top: 25px;
-  font-family: 'Abel';
+  margin: 25px 0 0;
+  font-family: 'Abel', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -218,7 +216,7 @@ footer ul {
 }
 
 footer ul li{
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -266,7 +264,7 @@ footer ul li a{
 .admin-line{
   border-bottom: 2px solid #C00000;
   width: 43.5px;
-  height: 0px;
+  height: 0;
   position: absolute;
   margin-top: 17px;
 }

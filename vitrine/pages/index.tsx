@@ -5,6 +5,7 @@ import FooterComponent from "../components/FooterComponent";
 import HeadComponent from "../components/HeadComponent";
 import HeaderComponent from "../components/HeaderComponent";
 import { ButtonComponent, CheckboxComponent, InputComponent, RadioButtonComponent, SelectComponent } from "my-lib-ui";
+import {API} from "./api";
 
 const Home: NextPage = () => {
   const [message, setMessage] = useState("");
@@ -14,8 +15,14 @@ const Home: NextPage = () => {
     let data = new FormData(e.target);
     axios
      .post(
-       api,
-       data,
+       API.INSCRIPTION,
+        {
+          lastname: data.get("lastname"),
+          firstname: data.get("firstname"),
+          email: data.get("email"),
+          phoneNumber: data.get("phoneNumber"),
+          nationality: data.get("nationality"),
+        }
        ).then((res) => {
          setMessage(res.data.message);
     })
