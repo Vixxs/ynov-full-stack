@@ -41,12 +41,10 @@ const futureUserApi = (app: Express) => {
       });
   });
 
-  app.post(urlApiValidateRegistration, (req, res) => {
-      const data = req.body;
+  app.get(urlApiValidateRegistration, (req, res) => {
       const id = req.params.id;
       axios
-        .post(endPointServiceUserValidateRegistration + id,
-          data,
+        .get(endPointServiceUserValidateRegistration + id,
           {
             headers: {
               Authorization: req.header("Authorization"),

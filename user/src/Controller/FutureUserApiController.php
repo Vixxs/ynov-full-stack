@@ -23,6 +23,8 @@ class FutureUserApiController extends AbstractController
                 'lastname' => $futureUser->getLastname(),
                 'email' => $futureUser->getEmail(),
                 'phoneNumber' => $futureUser->getPhoneNumber(),
+                'nationality' => $futureUser->getNationality(),
+                'status' => $futureUser->isVerified()
             ];
         }
         return $this->json($responseData);

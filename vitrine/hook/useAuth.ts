@@ -12,12 +12,16 @@ const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [user, setUser] = useState<User>(null);
-  const [loading, setLoading] = useState(true);
-  let token = null;
+  const [isLoading, setIsLoading] = useState(true);
+  const [token, setToken] = useState(null);
 
   useEffect(() => {
+    let token = null;
     if (typeof window !== "undefined") {
       token = localStorage.getItem('token');
+      if (token) {
+        setToken(token);
+      }
     }
     axios.get(apiUser, {
       headers: {
@@ -28,9 +32,9 @@ const useAuth = () => {
       setUser(user);
       setIsAuthenticated(true);
       setIsAdmin(user?.roles?.includes('ROLE_ADMIN'));
-      setLoading(false);
+      setIsLoading(false);
     }).catch(err => {
-      setLoading(false);
+      setIsLoading(false);
       console.log(err);
     });
   }, []);
@@ -39,7 +43,8 @@ const useAuth = () => {
     isAuthenticated: isAuthenticated,
     isAdmin: isAdmin,
     user: user,
-    loading: loading
+    isLoading: isLoading,
+    token: token
   }
 }
 export default useAuth;

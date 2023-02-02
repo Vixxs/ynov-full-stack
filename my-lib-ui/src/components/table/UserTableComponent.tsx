@@ -7,6 +7,7 @@ import TableComponent from "./TableComponent";
 
 interface UserTableProps {
   data: FormData[];
+  onValidate?: (data: FormData) => void;
 }
 
 const columns = [
@@ -17,9 +18,9 @@ const columns = [
   "Actions"
 ];
 
-const UserTableComponent: React.FC<UserTableProps> = ({data}) => {
+const UserTableComponent: React.FC<UserTableProps> = ({data, onValidate}) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedRow, setSelectedRow] = useState<FormData | null>(data[0]);
+  const [selectedRow, setSelectedRow] = useState<FormData | null>(data ? data[0] : null );
   const openModal = (index: number) => {
     setSelectedRow(data[index]);
     setModalIsOpen(true);
@@ -29,32 +30,40 @@ const UserTableComponent: React.FC<UserTableProps> = ({data}) => {
     setModalIsOpen(false);
   };
 
-  const handleSave = () => {
-    setSelectedRow(null);
-    setModalIsOpen(false);
-  };
-
   return (
     <div>
       <TableComponent columns={columns}>
-        {data.map((row, index) => (
-          <UserRowComponent key={index} row={row} index={index} openModal={openModal}/>
-        ))}
+        {
+          data?.length === 0
+            ? (
+              <tr>
+                <td colSpan={5}>Aucun utilisateur</td>
+              </tr>
+            )
+            : (
+              data.map(
+                (row, index) => (
+                  <UserRowComponent key={index} row={row} index={index} openModal={openModal}/>
+                )
+              )
+            )
+        }
+
       </TableComponent>
-      {
+      { selectedRow && (
         selectedRow.status
           ? <EditModal
             isOpen={modalIsOpen}
             onClose={closeModal}
-            onSave={handleSave}
             data={selectedRow}
           />
           : <ValidateModal
             isOpen={modalIsOpen}
             onClose={closeModal}
-            onSave={handleSave}
+            onSave={onValidate}
             data={selectedRow}
           />
+        )
       }
     </div>
   );

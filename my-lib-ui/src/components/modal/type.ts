@@ -1,16 +1,16 @@
 export interface FormData {
   status: boolean;
-  firstName: string;
-  lastName: string;
+  firstname: string;
+  lastname: string;
   email: string;
-  phone: string;
+  phoneNumber: string;
   nationality: string;
 }
 
 export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSave: (data: FormData) => void;
+  onSave?: (data: FormData) => void;
   data: FormData;
 }
 
