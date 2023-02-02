@@ -14,9 +14,9 @@ const UserRowComponent: React.FC<UserRowProps> = ({row, index, openModal }) => {
   return (
     <RowComponent key={index}>
       <td className="bold">{row.status ? '✅ Validé' : '⚠️ En attente'}</td>
-      <td>{row.lastName.toUpperCase()}<br/>{row.firstName}</td>
-      <td>{row.email}<br/>{row.phone}</td>
-      <td>{row.nationality}</td>
+      <td>{row.lastname.toUpperCase()}<br/>{row.firstname}</td>
+      <td>{row.email}<br/>{row.phoneNumber}</td>
+      <td className="capitalize" >{row.nationality}</td>
       <td>
         {
           row.status

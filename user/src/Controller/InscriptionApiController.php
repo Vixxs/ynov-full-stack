@@ -46,7 +46,7 @@ class InscriptionApiController extends AbstractController
         ]);
     }
 
-    #[Route('/valide-user/{id}', methods: 'POST')]
+    #[Route('/valide-user/{id}', methods: 'GET')]
     #[Security('is_granted("ROLE_ADMIN")')]
     public function validUser(Request $request, int $id, FutureUserRepository $futureUserRepository): JsonResponse
     {

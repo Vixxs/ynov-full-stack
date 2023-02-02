@@ -20,7 +20,8 @@ main{
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 72px;
+  padding-top: 84px;
+  min-height: 100vh;
 }
 
 header{
@@ -72,7 +73,7 @@ header{
   height: 1px;
   background-color: #C00000;
 }
-header div span{
+header a span{
   font-family: 'Bayon', sans-serif;
   font-size: 39.1476px;
   line-height: 39px;
@@ -101,6 +102,9 @@ header div span{
 .my-lib-input-text {
   margin-bottom: 24px;
 }
+#admin .my-lib-input-text {
+  margin-bottom: 0;
+}
 
 .login-box{
   margin-top: 124px;
@@ -123,11 +127,10 @@ header div span{
 }
 
 .login-button button {
-  margin-top: 24px;
   width: 326px;
   background: #C00000;
   justify-content: center;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: white;
   display: flex;
@@ -140,7 +143,8 @@ header div span{
 
 main {
   background: white;
-  margin-bottom: 80px;
+  padding-bottom: 80px;
+    box-sizing: unset;
 }
 #login main {
   background-color: #F5F5F5;
@@ -159,7 +163,7 @@ main {
   flex-direction: column;
 }
 .home-form h1{
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 21px;
@@ -194,9 +198,8 @@ footer{
 }
 
 footer p{
-  margin: 0;
-  margin-top: 25px;
-  font-family: 'Abel';
+  margin: 25px 0 0;
+  font-family: 'Abel', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -213,7 +216,7 @@ footer ul {
 }
 
 footer ul li{
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -226,8 +229,12 @@ footer ul li a{
 
 .admin-container {
   align-items: flex-start;
+  width: 800px;
+  min-width: auto;
 }
-
+#admin{
+    background-color: #F5F5F5;
+}
 #admin h1{
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -236,15 +243,17 @@ footer ul li a{
   line-height: 25px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  margin-top: 49px;
-  margin-bottom: 32px;
+  margin-top: 40px;
+  margin-bottom: 24px;
 }
 
 .admin-menu {
   margin-bottom: 36px;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  margin-right: 24px;
+  padding: 8px;
+  background: white;
+
 }
 
 .admin-menu .active {
@@ -255,7 +264,7 @@ footer ul li a{
 .admin-line{
   border-bottom: 2px solid #C00000;
   width: 43.5px;
-  height: 0px;
+  height: 0;
   position: absolute;
   margin-top: 17px;
 }

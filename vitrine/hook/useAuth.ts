@@ -1,26 +1,50 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-const api = "http://localhost:8000/api/.user/user";
+import {useState, useEffect} from 'react';
+
+const apiUser = "http://localhost:8000/api/.user/user";
+
+type User = {
+  id: number;
+  email: string;
+  "roles": [];
+}
 const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  if (typeof window === "undefined") return null;
-  const token = localStorage.getItem('token');
-  let role;
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [user, setUser] = useState<User>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [token, setToken] = useState(null);
 
-  axios.get(api, {
-    headers: {
-      Authorization: `Bearer ${token}`
+  useEffect(() => {
+    let token = null;
+    if (typeof window !== "undefined") {
+      token = localStorage.getItem('token');
+      if (token) {
+        setToken(token);
+      }
     }
-  }).then(res => {
-    role = res.data.role;
-    setIsAuthenticated(true);
-  }).catch(err => {
-    setIsAuthenticated(false);
-  })
+    axios.get(apiUser, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }).then(res => {
+      let user = res.data;
+      setUser(user);
+      setIsAuthenticated(true);
+      setIsAdmin(user?.roles?.includes('ROLE_ADMIN'));
+      setIsLoading(false);
+    }).catch(err => {
+      setIsLoading(false);
+      console.log(err);
+    });
+  }, []);
 
   return {
     isAuthenticated: isAuthenticated,
-    role: role
+    isAdmin: isAdmin,
+    user: user,
+    isLoading: isLoading,
+    token: token
   }
 }
 export default useAuth;

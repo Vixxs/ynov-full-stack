@@ -19,10 +19,10 @@ const EditModal: React.FC<ModalProps> = ({
     return (
         <Modal label="Modifier l’utilisateur" isOpen={isOpen} onRequestClose={onClose}>
           <form onSubmit={handleSubmit}>
-            <InputComponent name="lastName" type="text" label="Nom" defaultValue={data.lastName}></InputComponent>
-            <InputComponent name="firstName" label="Prénom" defaultValue={data.firstName}></InputComponent>
+            <InputComponent name="lastname" type="text" label="Nom" defaultValue={data.lastname}></InputComponent>
+            <InputComponent name="firstname" label="Prénom" defaultValue={data.firstname}></InputComponent>
             <InputComponent name="email" label="E-mail" type="email" defaultValue={data.email}></InputComponent>
-            <InputComponent name="phoneNumber" label="Numéro de téléphone" defaultValue={data.phone}></InputComponent>
+            <InputComponent name="phoneNumber" label="Numéro de téléphone" defaultValue={data.phoneNumber}></InputComponent>
             <SelectComponent name="nationality" label="Nationalité">
                 <option value={data.nationality}>{data.nationality}</option>
             </SelectComponent>
