@@ -1,18 +1,17 @@
-import Head from "next/head";
-import { ButtonComponent } from "my-lib-ui";
+import {ButtonComponent} from "my-lib-ui";
 
-const onClick = (e: any) => {
+const onClick = () => {
   window.location.assign('/login');
 }
 
 const HeaderComponent: React.FC = () => {
   return (
     <header>
-      <div className="logo-box">
-        <img src="/logo-header.png" alt="Logo" />
+      <a className="logo-box" href="/">
+        <img src="/logo-header.png" alt="Logo"/>
         <span>RIDE</span>
-      </div>
-      <ButtonComponent label="Connexion admin" onClick={onClick} />
+      </a>
+      <ButtonComponent label="Connexion admin" onClick={onClick}/>
     </header>
   );
 };
