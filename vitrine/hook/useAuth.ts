@@ -11,9 +11,9 @@ type User = {
 const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [user, setUser] = useState<User>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [token, setToken] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {
     let token = null;

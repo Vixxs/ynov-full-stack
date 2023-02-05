@@ -12,7 +12,7 @@ import {API} from "../utils/api";
 const Login: NextPage = () => {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
-  const handleSubmit = (event : Event) => {
+  const handleSubmit = (event : any) => {
     event.preventDefault();
     const data = new FormData(event.target as HTMLFormElement);
     const username = data.get("username");
@@ -21,7 +21,7 @@ const Login: NextPage = () => {
       if (response.data.token) {
         const token = response.data.token;
         localStorage.setItem("token", token);
-        const decoded = jwt_decode(token);
+        const decoded: any = jwt_decode(token);
         if (decoded.roles.includes("ROLE_ADMIN")) {
           router.push("/admin");
         }

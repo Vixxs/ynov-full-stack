@@ -12,11 +12,11 @@ COPY ./vitrine/package.json .
 RUN yalc add my-lib-ui
 RUN npm install
 COPY ./vitrine/ .
+RUN npm run build
 # Expose the port that the application will run on
 EXPOSE 3000
+CMD [ "npm", "run", "start" ]
 
-# Start the application
-CMD ["npm", "run", "dev"]
 
 
 

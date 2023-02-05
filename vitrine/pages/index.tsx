@@ -33,7 +33,7 @@ const Home: NextPage = () => {
     })
   };
 
-  const checkForm = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const checkForm = (e: any) => {
     setDisabled(!e.target.checked);
   };
 

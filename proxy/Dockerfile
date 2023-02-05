@@ -9,9 +9,9 @@ COPY package*.json ./
 # Install the dependencies
 RUN npm install
 RUN npm install -g supervisor
-
 # Copy the rest of the source code
 COPY . .
+RUN npm run build
 
 EXPOSE 8000
-CMD [ "npm", "run", "watchserver" ]
+CMD [ "npm", "run", "start" ]

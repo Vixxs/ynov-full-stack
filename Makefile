@@ -8,6 +8,8 @@ CONNECT    		= docker compose exec user
 SYMFONY         = $(EXEC_USER) php bin/console
 COMPOSER        = $(EXEC_USER) composer
 
+demo: install start db
+
 start:
 	$(DOCKER_COMPOSE) up -d --remove-orphans
 

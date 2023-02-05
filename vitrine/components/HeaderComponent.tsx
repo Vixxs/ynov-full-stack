@@ -1,4 +1,5 @@
 import {ButtonComponent} from "my-lib-ui";
+import Link from 'next/link';
 
 const onClick = () => {
   window.location.assign('/login');
@@ -7,10 +8,10 @@ const onClick = () => {
 const HeaderComponent: React.FC = () => {
   return (
     <header>
-      <a className="logo-box" href="/">
+      <Link className="logo-box" href="/">
         <img src="/logo-header.png" alt="Logo"/>
         <span>RIDE</span>
-      </a>
+      </Link>
       <ButtonComponent label="Connexion admin" onClick={onClick}/>
     </header>
   );
