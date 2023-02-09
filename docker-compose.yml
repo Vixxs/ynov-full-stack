@@ -11,6 +11,19 @@ services:
     networks:
       - app-network
 
+  car:
+    build: ./car
+    container_name: service-car
+    working_dir: /var/www
+    volumes:
+      - ./car:/var/www
+    ports:
+      - 5000:5000
+    environment:
+      FLASK_ENV: development
+    networks:
+      - app-network
+
   next:
     build:
       context: ./
