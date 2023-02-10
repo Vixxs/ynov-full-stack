@@ -7,3 +7,6 @@ export { default as UserTableComponent } from "./components/table/UserTableCompo
 export { default as TableComponent } from "./components/table/TableComponent";
 export { default as UserRowComponent } from "./components/row/UserRowComponent";
 export { default as RowComponent } from "./components/row/RowComponent";
+export { default as Modal } from "./components/modal/ModalComponent";
+export { default as CarTableComponent } from "./components/table/CarTableComponent";
+export { default as CarRowComponent } from "./components/row/CarRowComponent";

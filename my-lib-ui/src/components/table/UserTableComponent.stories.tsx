@@ -78,13 +78,13 @@ const data = [
   }
 ]
 
-export const TableComponentView: ComponentStory<
+export const UserTableComponentView: ComponentStory<
   typeof UserTableComponent
 > = (args) => (
   <UserTableComponent {...args}>
   </UserTableComponent>
 );
 
-TableComponentView.args = {
+UserTableComponentView.args = {
   data: data,
 };
