@@ -49,10 +49,8 @@ generate-jwt:
 	$(SYMFONY) lexik:jwt:generate-keypair --overwrite
 
 build-lib:
-	$(DOCKER_EXEC) -w /var/my-lib-ui next npm install
 	$(DOCKER_EXEC) -w /var/my-lib-ui next npm run yalc:build
 	$(DOCKER_EXEC) next yalc add my-lib-ui
-	$(DOCKER_EXEC) next npm install
 
 build-proxy:
 	$(EXEC_PROXY) npm run build

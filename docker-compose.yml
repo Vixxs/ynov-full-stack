@@ -17,8 +17,6 @@ services:
     working_dir: /var/www
     volumes:
       - ./car:/var/www
-    ports:
-      - 5000:5000
     environment:
       FLASK_ENV: development
     networks:
@@ -33,6 +31,8 @@ services:
     volumes:
       - ./vitrine:/var/www
       - /var/www/node_modules
+      - /var/www/.yalc
+      - /var/www/.next
       - ./my-lib-ui:/var/my-lib-ui
       - /var/my-lib-ui/node_modules
     networks:

@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import checkToken from "./middlewares/checkToken";
 import userService from "./services/user/user";
 import futureUserService from "./services/future-user/futureUser";
+import carService from "./services/car/car";
 
 import { urlApi } from "./types";
 const app = express();
@@ -24,3 +25,4 @@ app.listen(port, () => {
 
 userService.userApi(app);
 futureUserService.futureUserApi(app);
+carService.carApi(app);

@@ -3,12 +3,6 @@ from models import CarModel
 from db import db, app
 import json
 
-
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    return redirect('/car')
-
-
 @app.route('/car/create', methods=['POST'])
 def create():
     data = json.loads(request.data)
@@ -21,7 +15,7 @@ def create():
     return jsonify({"message": f"Car with id {car.id} create successfully !"})
 
 
-@app.route('/car')
+@app.route('/car', methods=['GET'])
 def RetrieveList():
     cars = CarModel.query.all()
     return jsonify(cars)
@@ -60,4 +54,4 @@ def delete(id):
     return jsonify({"message": f"Car with id={id} Doesn't exist"})
 
 
-app.run(host='localhost', port=5000)
+app.run(host='localhost', port=80)
