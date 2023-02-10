@@ -11,7 +11,6 @@ Attention le 'make db' drop et recréer la base de donnée.
 
 ## Services
 - PhpMyAdmin: http://localhost:8080/ user: admin / mdp: admin
-- Flask: http://localhost:5000/
 - Proxy(Express.js): http://localhost:8000/
 - Front(Next.js): http://localhost:3000/
 - Storybook: http://localhost:9000/ (faire 'make storybook' pour le lancer)
