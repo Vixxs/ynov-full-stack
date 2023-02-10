@@ -6,12 +6,13 @@ import json
 @app.route('/car/create', methods=['POST'])
 def create():
     data = json.loads(request.data)['data']
-    if "name" not in data or "price" not in data or "image" not in data:
-        return jsonify({"message": "Please provide name, price and image"})
-    name = data['name']
+    if not data:
+        return jsonify({"message": "No data found"})
+    brand = data['brand']
+    model = data['model']
     price = data['price']
     image = data['image']
-    car = CarModel(name=name, price=price, image=image)
+    car = CarModel(brand, model, price, image)
     db.session.add(car)
     db.session.commit()
     return jsonify({"message": f"Car with id {car.id} create successfully !"})
@@ -35,9 +36,11 @@ def RetrieveEmployee(id):
 def update(id):
     car = CarModel.query.get(id)
     if car:
-        data = json.loads(request.data)
-
-        car.name = data['name'] if "name" in data else car.name
+        data = json.loads(request.data)['data']
+        if not data:
+            return jsonify({"message": "No data found"})
+        car.brand = data['brand'] if "brand" in data else car.brand
+        car.model = data['model'] if "model" in data else car.model
         car.price = data['price'] if "price" in data else car.price
         car.image = data['image'] if "image" in data else car.image
         db.session.add(car)
