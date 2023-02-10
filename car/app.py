@@ -5,7 +5,9 @@ import json
 
 @app.route('/car/create', methods=['POST'])
 def create():
-    data = json.loads(request.data)
+    data = json.loads(request.data)['data']
+    if "name" not in data or "price" not in data or "image" not in data:
+        return jsonify({"message": "Please provide name, price and image"})
     name = data['name']
     price = data['price']
     image = data['image']

@@ -8,7 +8,7 @@ const urlApiCarCreate = `${urlApi}/car/create`;
 const urlApiCarUpdate = `${urlApi}/car/:id/update`;
 const urlApiCarDelete = `${urlApi}/car/:id/delete`;
 
-const endPointCar = "http://car";
+const endPointCar = "http://car:5000";
 const endPointCarList = `${endPointCar}/car`;
 const endPointCarDetail = `${endPointCar}/car/:id`;
 const endPointCarCreate = `${endPointCar}/car/create`;
@@ -28,8 +28,10 @@ const carApi = (app: Express) => {
     });
 
     app.get(urlApiCarDetail, (req, res) => {
+        const id = req.params.id;
+        let endPoint = endPointCarDetail.replace(":id", id);
         axios
-            .get(endPointCarDetail)
+            .get(endPoint)
             .then((apiRes) => {
                 res.json(apiRes.data);
             })
@@ -52,8 +54,10 @@ const carApi = (app: Express) => {
 
     app.post(urlApiCarUpdate, (req, res) => {
         const data = req.body;
+        const id = req.params.id;
+        let endPoint = endPointCarUpdate.replace(":id", id);
         axios
-            .post(endPointCarUpdate, {data})
+            .post(endPoint, {data})
             .then((apiRes) => {
                 res.json(apiRes.data);
             })
@@ -63,8 +67,10 @@ const carApi = (app: Express) => {
     });
 
     app.post(urlApiCarDelete, (req, res) => {
+        const id = req.params.id;
+        let endPoint = endPointCarDelete.replace(":id", id);
         axios
-            .post(endPointCarDelete)
+            .post(endPoint)
             .then((apiRes) => {
                 res.json(apiRes.data);
             })
