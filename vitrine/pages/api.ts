@@ -10,6 +10,6 @@ export const API = {
   'CAR_LIST': 'http://localhost:8000/api/.car/car',
   'CAR_DETAIL': 'http://localhost:8000/api/.car/car/:id',
   'CREATE_CAR': 'http://localhost:8000/api/.car/car/create',
-  'UPDATE_CAR': 'http://localhost:8000/api/.car/car/:id/update',
-  'DELETE_CAR': 'http://localhost:8000/api/.car/car/:id/delete',
+  'UPDATE_CAR': 'http://localhost:8000/api/.car/car/update/:id',
+  'DELETE_CAR': 'http://localhost:8000/api/.car/car/delete/:id',
 }

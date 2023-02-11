@@ -5,15 +5,15 @@ const urlApi = "/api/.car";
 const urlApiCarList = `${urlApi}/car`;
 const urlApiCarDetail = `${urlApi}/car/:id`;
 const urlApiCarCreate = `${urlApi}/car/create`;
-const urlApiCarUpdate = `${urlApi}/car/:id/update`;
-const urlApiCarDelete = `${urlApi}/car/:id/delete`;
+const urlApiCarUpdate = `${urlApi}/car/update/:id`;
+const urlApiCarDelete = `${urlApi}/car/delete/:id`;
 
 const endPointCar = "http://car:5000";
 const endPointCarList = `${endPointCar}/car`;
 const endPointCarDetail = `${endPointCar}/car/:id`;
 const endPointCarCreate = `${endPointCar}/car/create`;
-const endPointCarUpdate = `${endPointCar}/car/:id/update`;
-const endPointCarDelete = `${endPointCar}/car/:id/delete`;
+const endPointCarUpdate = `${endPointCar}/car/update/:id`;
+const endPointCarDelete = `${endPointCar}/car/delete/:id`;
 
 const carApi = (app: Express) => {
     app.get(urlApiCarList, (req, res) => {

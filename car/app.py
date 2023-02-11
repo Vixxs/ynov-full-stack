@@ -32,7 +32,7 @@ def RetrieveEmployee(id):
     return jsonify({"message": f"Car with id={id} Doens't exist"})
 
 
-@app.route('/car/<int:id>/update', methods=['POST'])
+@app.route('/car/update/<int:id>', methods=['POST'])
 def update(id):
     car = CarModel.query.get(id)
     if car:
@@ -49,7 +49,7 @@ def update(id):
     return jsonify({"message": f"Car with id={id} Doens't exist"})
 
 
-@app.route('/car/<int:id>/delete', methods=['GET'])
+@app.route('/car/delete/<int:id>', methods=['GET'])
 def delete(id):
     car = CarModel.query.get(id)
     if car:
