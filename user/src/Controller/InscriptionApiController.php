@@ -38,7 +38,8 @@ class InscriptionApiController extends AbstractController
             $this->entityManager->persist($futureUser);
             $this->entityManager->flush();
             return $this->json([
-                'message' => 'Your account has been created, wait for an administrator to validate it'
+                'message' => 'Your account has been created, wait for an administrator to validate it',
+                'created' => true
             ]);
         }
         return $this->json([
@@ -71,10 +72,15 @@ class InscriptionApiController extends AbstractController
 
     private function validData(array $data): bool
     {
-        if (!isset($data['email']) || !isset($data['firstname']) || !isset($data['lastname']) || !isset($data['nationality']) || !isset($data['phoneNumber'])) {
+        if (empty($data['email']) || empty($data['firstname']) || empty($data['lastname']) || empty($data['nationality']) || empty($data['phoneNumber'])) {
             return false;
         }
-
+        if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+            return false;
+        }
+        if (!preg_match('/^(\+33|0)[1-9]([-. ]?[0-9]{2}){4}$/', $data['phoneNumber'])) {
+            return false;
+        }
         if ($this->futureUserRepository->findOneByEmail($data['email']) ) {
             return false;
         }

@@ -299,6 +299,28 @@ footer ul li a {
     background-color: #C00000;
 }
 
+#register-container {
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Abel', sans-serif;
+    font-size: 16px;
+    padding: 16px;
+}
+#register-container p{
+    margin: 0;
+}
+#register-container div{
+    display: flex;
+    padding: 42px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+    row-gap: 24px;
+}
 @media (max-width: 1200px) {
     .input-box{
         margin-top: 25px;
