@@ -1,4 +1,4 @@
-export interface FormData {
+export interface UserFormData {
   status: boolean;
   firstname: string;
   lastname: string;
@@ -7,10 +7,18 @@ export interface FormData {
   nationality: string;
 }
 
+export interface CarFormData {
+  id: number;
+  brand: string;
+  model: string;
+  price: number;
+  image: string;
+}
+
 export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSave?: (data: FormData) => void;
-  data: FormData;
+  onSave?: (data: UserFormData) => void;
+  data: UserFormData;
 }
 

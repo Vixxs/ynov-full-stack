@@ -66,11 +66,11 @@ const carApi = (app: Express) => {
             });
     });
 
-    app.post(urlApiCarDelete, (req, res) => {
+    app.get(urlApiCarDelete, (req, res) => {
         const id = req.params.id;
         let endPoint = endPointCarDelete.replace(":id", id);
         axios
-            .post(endPoint)
+            .get(endPoint)
             .then((apiRes) => {
                 res.json(apiRes.data);
             })

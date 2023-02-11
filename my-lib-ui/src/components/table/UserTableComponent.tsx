@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import EditModal from '../modal/EditModalComponent';
 import ValidateModal from "../modal/ValidateModalComponent";
-import {FormData} from "../modal/type";
+import {UserFormData} from "../modal/type";
 import UserRowComponent from "../row/UserRowComponent";
 import TableComponent from "./TableComponent";
 
 interface UserTableProps {
-  data: FormData[];
-  onValidate?: (data: FormData) => void;
+  data: UserFormData[];
+  onValidate?: (data: UserFormData) => void;
 }
 
 const columns = [
@@ -20,7 +20,7 @@ const columns = [
 
 const UserTableComponent: React.FC<UserTableProps> = ({data, onValidate}) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedRow, setSelectedRow] = useState<FormData | null>(data ? data[0] : null );
+  const [selectedRow, setSelectedRow] = useState<UserFormData | null>(data ? data[0] : null );
   const openModal = (index: number) => {
     setSelectedRow(data[index]);
     setModalIsOpen(true);

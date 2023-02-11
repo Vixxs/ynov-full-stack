@@ -49,7 +49,7 @@ def update(id):
     return jsonify({"message": f"Car with id={id} Doens't exist"})
 
 
-@app.route('/car/<int:id>/delete', methods=['POST'])
+@app.route('/car/<int:id>/delete', methods=['GET'])
 def delete(id):
     car = CarModel.query.get(id)
     if car:

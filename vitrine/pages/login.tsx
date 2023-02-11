@@ -48,8 +48,8 @@ const Login: NextPage = () => {
                 <p className="label-login">CONNEXION</p>
                 <div>
                   {error && <p className="error">{error}</p>}
-                  <InputComponent label="identifiant" name="username" type="text"/>
-                  <InputComponent label="mot de passe" name="password" type="password"/>
+                  <InputComponent label="Identifiant" name="username" type="text"/>
+                  <InputComponent label="Mot de passe" name="password" type="password"/>
                   <ButtonComponent label="Connexion" className="login-button"/>
                 </div>            
               </form>

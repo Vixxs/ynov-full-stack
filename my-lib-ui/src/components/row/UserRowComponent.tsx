@@ -1,10 +1,10 @@
 import React from 'react';
 import {ButtonComponent} from "../../index";
-import {FormData} from "../modal/type";
+import {UserFormData} from "../modal/type";
 import RowComponent from "./RowComponent";
 
 interface UserRowProps {
-  row: FormData;
+  row: UserFormData;
   index: number;
   openModal: (index: number) => void;
 }
