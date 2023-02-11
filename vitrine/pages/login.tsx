@@ -42,7 +42,7 @@ const Login: NextPage = () => {
           <main>
             <div className="login-box">
               <a className="button-goback" href="javascript:history.back()">
-                ← retour
+                retour
               </a>
               <form onSubmit={handleSubmit} className="login-form" action="">
                 <p className="label-login">CONNEXION</p>
