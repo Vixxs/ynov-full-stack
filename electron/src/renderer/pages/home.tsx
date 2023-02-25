@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ButtonComponent, InputComponent } from 'my-lib-ui';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -6,9 +6,14 @@ import background from '../../../assets/bg.png';
 import logo from '../../../assets/logo.png';
 
 const Home: React.FC = () => {
-  const [errors, setErrors] = React.useState({});
+  const [errors, setErrors] = React.useState('');
   const navigate = useNavigate();
-
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      navigate('/list');
+    }
+  }, [navigate]);
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -26,7 +31,7 @@ const Home: React.FC = () => {
       localStorage.setItem('token', token);
       navigate('/list');
     } catch (e) {
-      setErrors(e.response.data);
+      setErrors(e.response.data.message);
     }
   };
 
@@ -38,22 +43,24 @@ const Home: React.FC = () => {
           className="z-0 absolute h-1/3 w-full object-cover object-left"
           alt="background"
         />
-        <img src={logo} className="m-5 z-10" alt="logo" />
+        <img src={logo} className="m-5 z-10" alt="logo"/>
       </header>
       <div className="p-6 mt-1/3">
         <h1 className="font-[800] text-[36px] tracking-wide">Connexion</h1>
         <span className="text-sm leading-1">
-          Connectez-vous à l’aide des identifiants reçus dans votre mail
-          d’activation.
+          Connectez-vous à l’aide de vos identifiants après validation par un administrateur.
         </span>
         <form className="flex flex-col gap-6 mt-6" onSubmit={handleLogin}>
-          <InputComponent label="Identifiant" name="username" />
+          {errors && <span className="text-red text-sm">{errors}</span>}
+          <InputComponent label="Identifiant" name="username"/>
           <InputComponent
             label="Mot de passe"
             name="password"
             type="password"
           />
-          <ButtonComponent label="Connexion" />
+          <ButtonComponent
+            label="Connexion"
+          />
         </form>
       </div>
     </div>

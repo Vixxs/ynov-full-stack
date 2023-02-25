@@ -6,7 +6,7 @@ const apiUser = "http://localhost:8000/api/.user/user";
 type User = {
   id: number;
   email: string;
-  "roles": [];
+  roles: [];
 }
 const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
