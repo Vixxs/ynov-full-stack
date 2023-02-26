@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: user
+    env: docker
+    dockerfilePath: ./user/Dockerfile
+    buildContext: ./user
+
+  - type: web
+    name: car
+    env: docker
+    dockerfilePath: ./car/Dockerfile
+    buildContext: ./car
+
+  - type: web
+    name: next
+    env: docker
+    dockerfilePath: ./vitrine/Dockerfile
+    buildContext: ./
+
+  - type: web
+    name: proxy
+    env: docker
+    dockerfilePath: ./proxy/Dockerfile
+    buildContext: ./proxy
+
+databases:
+  - name: prod
+
