@@ -3,25 +3,25 @@ services:
     name: user
     env: docker
     dockerfilePath: ./user/Dockerfile
-    buildContext: ./user
+    dockerContext: ./user
 
   - type: web
     name: car
     env: docker
     dockerfilePath: ./car/Dockerfile
-    buildContext: ./car
+    dockerContext: ./car
 
   - type: web
     name: next
     env: docker
     dockerfilePath: ./vitrine/Dockerfile
-    buildContext: ./
+    dockerContext: ./
 
   - type: web
     name: proxy
     env: docker
     dockerfilePath: ./proxy/Dockerfile
-    buildContext: ./proxy
+    dockerContext: ./proxy
 
 databases:
   - name: prod
