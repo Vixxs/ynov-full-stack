@@ -324,7 +324,7 @@ footer ul li a {
     width: 100%;
     margin: 0;
 }
-#register-container div{
+#register-container a{
     display: flex;
     padding: 42px 0;
     flex-wrap: wrap;
