@@ -1,4 +1,4 @@
-DOCKER_COMPOSE	= docker compose
+DOCKER_COMPOSE	= docker-compose
 DOCKER_EXEC   	= docker exec
 
 EXEC_USER       = $(DOCKER_EXEC) service-user
