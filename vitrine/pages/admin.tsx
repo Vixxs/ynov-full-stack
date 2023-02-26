@@ -25,8 +25,8 @@ const Admin: NextPage = () => {
               <AdminTableComponent/>
             ) : (
               <div className="admin-container">
-                <h1>ACCES INTERDIT</h1>
-                <p>Vous n'avez pas les droits d'accès à cette page</p>
+                <h1>{"ACCES INTERDIT"}</h1>
+                <p>{"Vous n'avez pas les droits d'accès à cette page"}</p>
                 <ButtonComponent
                   label="Se connecter"
                   onClick={() => router.push('/login')}

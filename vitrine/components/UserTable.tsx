@@ -13,7 +13,7 @@ const UserTable = () => {
     fetchFutureUsers();
   }, [token]);
 
-  const handleValidate = (data) => {
+  const handleValidate = (data: any) => {
     if (!token) return;
     axios.get(API.VALIDATION +`/${data.id}`
       , {

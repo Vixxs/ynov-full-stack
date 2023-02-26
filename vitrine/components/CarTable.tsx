@@ -18,7 +18,7 @@ const CarTable = () => {
     fetchCars();
   }, [token]);
 
-  const handleUpdate = (event) => {
+  const handleUpdate = (event: any) => {
     if (!token) return;
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -27,6 +27,7 @@ const CarTable = () => {
     const price = formData.get("price");
     const image = formData.get("image");
     const id = formData.get("id");
+    if (typeof id !== 'string') return;
     axios.post(API.UPDATE_CAR.replace(':id', id), {brand, model, price, image},
       {
         headers: {
@@ -61,7 +62,7 @@ const CarTable = () => {
     });
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     if (!token) return;
     event.preventDefault();
     const formData = new FormData(event.target);
