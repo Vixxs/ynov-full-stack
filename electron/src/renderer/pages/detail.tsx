@@ -11,7 +11,7 @@ const Detail: React.FC = () => {
   const { token } = useAuth();
   const fetchDetail = () => {
     axios
-      .get(`http://localhost:8000/api/.car/car/${id}`, {
+      .get(`http://ride.francecentral.cloudapp.azure.com:8000/api/.car/car/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

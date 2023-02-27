@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const apiUser = 'http://localhost:8000/api/.user/user';
+const apiUser = 'http://ride.francecentral.cloudapp.azure.com:8000/api/.user/user';
 
 type User = {
   id: number;

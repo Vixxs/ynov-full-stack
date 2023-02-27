@@ -9,7 +9,7 @@ const List: React.FC = () => {
   const { token } = useAuth();
   const fetchCars = () => {
     axios
-      .get('http://localhost:8000/api/.car/car', {
+      .get('http://ride.francecentral.cloudapp.azure.com:8000/api/.car/car', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },

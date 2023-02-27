@@ -21,7 +21,7 @@ const Home: React.FC = () => {
     const password = data.get('password');
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/.user/login',
+        'http://ride.francecentral.cloudapp.azure.com:8000/api/.user/login',
         {
           username,
           password,
