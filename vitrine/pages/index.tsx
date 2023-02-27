@@ -62,7 +62,7 @@ const Home: NextPage = () => {
                 <p>Je suis :</p>
                 <div className="radio-box">
                   <RadioButtonComponent name="situation" label="une entreprise" id="radio-entreprise"/>
-                  <RadioButtonComponent name="situation" label="une particulier" id="radio-particulier"/>
+                  <RadioButtonComponent name="situation" label="un particulier" id="radio-particulier"/>
                 </div>
                 <div className="input-box">
                   <InputComponent name="lastname" label="Nom" type={"text"} placeholder="Votre nom"/>
