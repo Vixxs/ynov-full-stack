@@ -14,7 +14,7 @@ RUN npm install
 COPY ./vitrine/ .
 RUN npm run build
 # Expose the port that the application will run on
-EXPOSE 80
+EXPOSE 3000
 CMD [ "npm", "run", "start" ]
 
 
