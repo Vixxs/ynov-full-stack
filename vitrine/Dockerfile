@@ -9,9 +9,9 @@ RUN npm run yalc:build
 # Copy the package.json and package-lock.json files to the container
 WORKDIR /var/www
 COPY ./vitrine/package.json .
-COPY ./vitrine/ .
 RUN yalc add my-lib-ui
 RUN npm install
+COPY ./vitrine/ .
 RUN npm run build
 # Expose the port that the application will run on
 EXPOSE 80
