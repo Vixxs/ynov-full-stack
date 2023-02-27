@@ -11,7 +11,7 @@ Attention le 'make db' drop et recréer la base de donnée.
 
 ## Services
 - PhpMyAdmin: http://localhost:8080/ user: admin / mdp: admin
-- Proxy(Express.js): http://localhost:8000/
+- Proxy(Express.js): http://ride.francecentral.cloudapp.azure.com:8000/
 - Front(Next.js): http://localhost:3000/
 - Storybook: http://localhost:9000/ (faire 'make storybook' pour le lancer)
 

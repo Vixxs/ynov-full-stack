@@ -14,7 +14,7 @@ RUN yalc add my-lib-ui
 RUN npm install
 RUN npm run build
 # Expose the port that the application will run on
-EXPOSE 3000
+EXPOSE 80
 CMD [ "npm", "run", "start" ]
 
 
