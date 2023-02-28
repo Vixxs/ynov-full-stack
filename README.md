@@ -12,7 +12,7 @@ Attention le 'make db' drop et recréer la base de donnée.
 ## Services
 - PhpMyAdmin: http://ride.francecentral.cloudapp.azure.com:8080/ user: admin / mdp: admin
 - Proxy(Express.js): http://ride.francecentral.cloudapp.azure.com:8000/
-- Front(Next.js): http://ride.francecentral.cloudapp.azure.com/
+- Front(Next.js): http://ride.francecentral.cloudapp.azure.com/ compte admin : admin@myapp.com mdp : admin / compte user: user@myapp.com mdp: user 
 - Storybook: http://ride.francecentral.cloudapp.azure.com:9000/ (faire 'make storybook' pour le lancer)
 
 ## Command dev
