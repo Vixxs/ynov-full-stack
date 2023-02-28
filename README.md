@@ -14,7 +14,7 @@ Attention le 'make db' drop et recréer la base de donnée.
 - Proxy(Express.js): http://ride.francecentral.cloudapp.azure.com:8000/
 - Front(Next.js): http://ride.francecentral.cloudapp.azure.com/ compte admin : admin@myapp.com mdp : admin / compte user: user@myapp.com mdp: user 
 - Storybook: http://ride.francecentral.cloudapp.azure.com:9000/ (faire 'make storybook' pour le lancer)
-- Electron: Lien de téléchargement http://ride.francecentral.cloudapp.azure.com/setup/Ride%20Setup%204.6.0.exe
+- Electron: Lien de téléchargement [ici](http://ride.francecentral.cloudapp.azure.com/setup/Ride%20Setup%204.6.0.exe)
 
 ## Command dev
 - make connect (se connecter au conteneur service-user)
