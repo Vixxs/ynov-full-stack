@@ -1,4 +1,7 @@
 # Full Stack
+ Projet réaliser dans le cadre du cours Full Stack
+ lien vers la maquette [ici](https://www.figma.com/file/g8RWbQyy4lqxbeOQBeYsV7/Gamos-2022---JoAzCo?node-id=13%3A1509&t=wbDbU1QxRzOHnQtg-0)
+
 ## Lancer le projet 
 - Installer make
 - make install (pour build et start les conteneurs)
