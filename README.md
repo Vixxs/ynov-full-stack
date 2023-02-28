@@ -10,10 +10,10 @@ Attention le 'make db' drop et recréer la base de donnée.
 - make storybook (pour lancer le storybook sur http://localhost:9000/)
 
 ## Services
-- PhpMyAdmin: http://localhost:8080/ user: admin / mdp: admin
+- PhpMyAdmin: http://ride.francecentral.cloudapp.azure.com:8080/ user: admin / mdp: admin
 - Proxy(Express.js): http://ride.francecentral.cloudapp.azure.com:8000/
-- Front(Next.js): http://localhost:3000/
-- Storybook: http://localhost:9000/ (faire 'make storybook' pour le lancer)
+- Front(Next.js): http://ride.francecentral.cloudapp.azure.com/
+- Storybook: http://ride.francecentral.cloudapp.azure.com:9000/ (faire 'make storybook' pour le lancer)
 
 ## Command dev
 - make connect (se connecter au conteneur service-user)
