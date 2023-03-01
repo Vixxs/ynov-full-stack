@@ -5,7 +5,7 @@ import FooterComponent from "../components/FooterComponent";
 import HeadComponent from "../components/HeadComponent";
 import HeaderComponent from "../components/HeaderComponent";
 import {ButtonComponent, CheckboxComponent, InputComponent, RadioButtonComponent, SelectComponent} from "my-lib-ui";
-import {API} from "./api";
+import {API} from "../utils/api";
 import RegisterComponent from "../components/RegisterComponent";
 
 const Home: NextPage = () => {

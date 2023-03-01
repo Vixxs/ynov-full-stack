@@ -5,7 +5,7 @@ import {CarTableComponent} from "../.yalc/my-lib-ui";
 import {Modal} from "../.yalc/my-lib-ui";
 import {InputComponent} from "../.yalc/my-lib-ui";
 import {ButtonComponent} from "../.yalc/my-lib-ui";
-import {API} from "../pages/api";
+import {API} from "../utils/api";
 import useAuth from "../hook/useAuth";
 
 const CarTable = () => {

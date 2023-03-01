@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 
 import {UserTableComponent} from "../.yalc/my-lib-ui";
-import {API} from "../pages/api";
+import {API} from "../utils/api";
 import useAuth from "../hook/useAuth";
 const UserTable = () => {
   const [futureUsers, setFutureUsers] = useState([]);

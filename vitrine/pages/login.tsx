@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import FooterComponent from "../components/FooterComponent";
 import HeadComponent from "../components/HeadComponent";
 import HeaderComponent from "../components/HeaderComponent";
-import {API} from "./api";
+import {API} from "../utils/api";
 
 const Login: NextPage = () => {
   const router = useRouter();
