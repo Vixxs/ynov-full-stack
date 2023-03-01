@@ -4,8 +4,7 @@ FROM node:14
 WORKDIR /var/www
 COPY . .
 RUN npm install
-RUN npm run build
 
 # Expose the port that the application will run on
 EXPOSE 9000
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "run", "storybook" ]
