@@ -2,8 +2,7 @@ FROM node:14
 
 # Set the working directory in the container
 WORKDIR /var/www
-COPY my-lib-ui/ .
-RUN npm i yalc -g
+COPY . .
 RUN npm install
 RUN npm run build
 
