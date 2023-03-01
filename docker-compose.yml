@@ -41,6 +41,18 @@ services:
       - "3000:3000"
       - "9000:9000"
 
+  storybook:
+    build: ./my-lib-ui
+    container_name: storybook
+    working_dir: /var/www/
+    volumes:
+      - ./my-lib-ui:/var/my-lib-ui
+      - /var/my-lib-ui/node_modules
+    networks:
+      - app-network
+    ports:
+      - "9000:9000"
+
   proxy:
     build: ./proxy
     container_name: service-proxy
